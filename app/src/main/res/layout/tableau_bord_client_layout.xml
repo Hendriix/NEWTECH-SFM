@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="CHIFFRE D'AFFAIRE"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/ca_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="2000 DH"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="OBJECTIF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/obj_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="2T"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/cell_shape"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="REALISATION"
+            android:textColor="@color/blanc"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/rea_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="1T"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/cell_shape"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="CHOUFOUNI"
+            android:textColor="@color/blanc"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/choufouni_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="200 POINTS"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="TOTAL VISITES :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@color/secondary"
+            android:textColor="@color/blanc"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/nb_visites_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="25"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@color/secondary"
+            android:textColor="@color/blanc"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/visites_journalieres_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

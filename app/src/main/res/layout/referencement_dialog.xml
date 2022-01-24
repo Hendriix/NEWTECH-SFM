@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_success" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUCCES"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/activity_vertical_margin"/>
+
+        <TextView
+            android:id="@+id/fragment_diaog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="VOTRE REFERENCEMENT ET VISIBILITE ONT BIEN ETE EXECUTEES"
+            android:textAlignment="center" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/valider_referencement"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/referencement_button_background"
+                android:text="VALIDER"
+                android:textColor="@color/primary" />
+
+            <Button
+                android:id="@+id/annuler_referencement"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/referencement_button_background"
+                android:text="ANNULER"
+                android:layout_marginStart="15dp"
+                android:layout_toRightOf="@+id/valider_referencement"
+                android:textColor="@color/primary" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

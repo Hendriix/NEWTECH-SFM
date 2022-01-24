@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:weightSum="1">
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Rest of content for the activity -->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_margin="2dp"
+        android:layout_gravity="center_horizontal">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_info"
+            android:src="@drawable/icon_info"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_rapport"
+            android:src="@drawable/icone_catalog"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_edit"
+            android:src="@drawable/icone_edit"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="5dp"
+            />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Prise de commandes"
+                android:id="@+id/btn_cmd"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Facturation"
+                android:id="@+id/btn_facturation"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Livraison"
+                android:id="@+id/btn_livraison"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Avoir"
+                android:id="@+id/btn_avoir"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Annuler"
+                android:id="@+id/btn_annuler"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Promotion"
+                android:id="@+id/btn_promotion"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Encaissement"
+                android:id="@+id/btn_encaissement"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="Referencement/VISIBILITE"
+                android:id="@+id/btn_referencement_visibilite"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="RELEVE STOCK"
+                android:id="@+id/btn_relever_stock"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="CHOUFOUNI"
+                android:id="@+id/btn_choufouni"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/blanc"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="CONTRAT IMAGE"
+                android:id="@+id/btn_contrat_image"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/blanc"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:text="QUESTIONNAIRE"
+                android:id="@+id/btn_questionnaire"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:textStyle="bold"
+                android:textColor="@color/blanc"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

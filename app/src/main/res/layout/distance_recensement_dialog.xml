@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/round_corner_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="DISTANCE"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/White"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@color/primary"/>
+
+
+    <EditText
+        android:id="@+id/distance_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="60dp"
+        android:background="@drawable/edittext_border_bg"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="DISTANCE EN M"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+
+
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:id="@+id/btn_valider"
+            android:text="valider"
+            android:background="@drawable/button_shape"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:layout_marginRight="50dp"
+            />
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:id="@+id/btn_annuler"
+            android:text="annuler"
+            android:background="@drawable/button_shape"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/articleFragment">
+
+    <fragment
+        android:id="@+id/visibiliteDialogFragment"
+        android:name="com.newtech.newtech_sfm.merchandising.article.VisibiliteDialogFragment"
+        android:label="VISIBILITE ARTICLE"
+        tools:layout="@layout/fragment_dialog_visibilite">
+        <action
+            android:id="@+id/action_visibiliteDialogFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.newtech.newtech_sfm.merchandising.article.ArticleFragment"
+        android:label="LISTE D'ARTICLE"
+        tools:layout="@layout/fragment_article">
+        <action
+            android:id="@+id/action_articleFragment_to_visibiliteDialogFragment"
+            app:destination="@id/visibiliteDialogFragment" />
+        <action
+            android:id="@+id/action_articleFragment_to_rayonFragment"
+            app:destination="@id/rayonFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rayonDialogFragment"
+        android:name="com.newtech.newtech_sfm.merchandising.rayon.RayonDialogFragment"
+        android:label="VISIBILITE RAYON"
+        tools:layout="@layout/fragment_dialog_rayon">
+        <action
+            android:id="@+id/action_rayonDialogFragment_to_rayonFragment"
+            app:destination="@id/rayonFragment"
+            app:popUpTo="@id/rayonFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/rayonFragment"
+        android:name="com.newtech.newtech_sfm.merchandising.rayon.RayonFragment"
+        android:label="LISTE DE RAYONS"
+        tools:layout="@layout/fragment_rayon">
+        <action
+            android:id="@+id/action_rayonFragment_to_rayonDialogFragment"
+            app:destination="@id/rayonDialogFragment" />
+        <action
+            android:id="@+id/action_rayonFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+
+</navigation>

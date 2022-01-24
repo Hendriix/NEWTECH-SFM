@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            tools:context=".GridLayoutActivity"
+            android:gravity="center"
+            android:layout_gravity="center">
+            <Space />
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button0"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="left|top"
+                android:text="Taches"
+                android:textStyle="italic"
+                android:background="@color/White"
+                android:textColor="@color/secondary"
+                android:drawableTop="@drawable/calander1"/>
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button1"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_gravity="left|top"
+                android:text="Synchroniser"
+                android:textStyle="italic"
+                android:background="@color/White"
+                android:textColor="@color/secondary"
+                android:drawableTop="@drawable/icone_sync" />
+
+
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button2"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="left|top"
+                android:text=" tournées "
+                android:textStyle="italic"
+                android:background="@color/White"
+                android:textColor="@color/secondary"
+                android:drawableTop="@drawable/icone_route"/>
+
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button3"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="left|top"
+                android:text="Clients"
+                android:textStyle="italic"
+                android:textColor="@color/secondary"
+                android:background="@color/White"
+                android:drawableTop="@drawable/icone_pers"/>
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button4"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="left|top"
+                android:text="catalogue"
+                android:background="@color/White"
+                android:textColor="@color/secondary"
+                android:textStyle="italic"
+                android:drawableTop="@drawable/icone_catalogue"/>
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button5"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_gravity="left|top"
+                android:text="Rapport"
+                android:background="@color/White"
+                android:textColor="@color/secondary"
+                android:textStyle="italic"
+                android:drawableTop="@drawable/icone_rapport"/>
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/button6"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_gravity="left|top"
+                android:text="DBClient"
+                android:textStyle="italic"
+                android:textColor="@color/secondary"
+                android:background="@color/White"
+                android:drawableTop="@drawable/icone_database"/>
+
+            <Button
+                android:layout_height="80dp"
+                android:layout_width="130dp"
+                android:id="@+id/quitter_app"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:text="quitter"
+                android:textStyle="italic"
+                android:textColor="@color/secondary"
+                android:layout_gravity="left|top"
+                android:background="@color/White"
+                android:drawableTop="@drawable/quitter"/>
+
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

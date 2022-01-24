@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Load the toolbar here -->
+
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <!-- <Button
+            android:id="@+id/QR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QR"
+            android:onClick="scan"/> -->
+
+        <CheckBox
+            android:text="CLIENTS RESTANTS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/va_checkBox1"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox
+            android:text="CLIENTS PROCHES"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/va_checkBox2"
+            android:onClick="onCheckboxClicked"/>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="2dp"
+            android:id="@+id/va_textView1" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="2dp"
+            android:id="@+id/va_textView2"
+            android:textColor="@color/White"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/va_progressBar1"
+        />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:id="@+id/date_btn"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:layout_margin="5dp"
+            android:text="DATE VISITE"
+            android:background="@drawable/button_shape"/>
+
+        <EditText
+            android:id="@+id/date_et"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="1"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:background="@color/secondary"
+            />
+
+    </LinearLayout>
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/visite_search_client"
+        android:focusable="false"
+        android:focusableInTouchMode="true" >
+
+    </SearchView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/visite_listview1"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#a9c23f</color>
+    <color name="primaryVariant">#a9c23f</color>
+
+
+    <color name="secondary">#5b6770</color>
+    <color name="secondaryVariant">#5b6770</color>
+
+    <color name="White">#ffffff</color>
+    <color name="Black">#000000</color>
+
+    <color name="background">#ffffff</color>
+
+    <color name="surface">#ffffff</color>
+    <color name="error">#ff0000</color>
+
+
+    <color name="onPrimary">@color/White</color>
+    <color name="onSecondary">@color/White</color>
+
+    <color name="onSurface">@color/Black</color>
+    <color name="onError">@color/White</color>
+
+    <color name="blanc">#ffffff</color>
+    <color name="vert">#a9c23f</color>
+    <color name="bleu">#dbf1f4</color>
+    <color name="bleu2">#b1e1e7</color>
+    <color name="gris">#5b6770</color>
+    <color name="gris3">#5b6770</color>
+    <color name="rouge">#d41c0b</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="orange">#7cf9d04b</color>
+
+    <color name="good">#00ff55</color>
+    <color name="bad">#ff0000</color>
+
+
+    <color name="list_divider">@color/primary</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+
+    <color name="circular_progress_default_progress">#bada55</color>
+    <color name="circular_progress_default_background">#787878</color>
+    <color name="circular_progress_default_title">#bada55</color>
+    <color name="circular_progress_default_subtitle">#5b6770</color>
+
+    <!-- A light Holo shade of blue -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+
+
+
+</resources>

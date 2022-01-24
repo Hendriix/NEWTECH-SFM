@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ventes_mensuelles_tablelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        app:theme="@style/TableLayoutStyle">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tablelayout_cell_shape"
+            >
+
+            <TextView
+                android:id="@+id/ligne_code1"
+                android:layout_width="30dp"
+                android:text="DATE"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:textColor="@color/White"
+                android:gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/art_code1"
+                android:layout_width="80dp"
+                android:text="TONNAGE"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:textColor="@color/White"
+                android:gravity="center"></TextView>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/ventes_mensuelles_fragment_listeview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

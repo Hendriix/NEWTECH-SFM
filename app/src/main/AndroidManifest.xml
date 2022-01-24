@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.newtech.newtech_sfm">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Configuration.AppController"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        android:hardwareAccelerated="true">
+
+        <activity
+            android:name=".Activity.RapportMenuActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_activity_rapport_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service android:name=".Service.Gpstrackerservice" />
+        <service android:name=".Service.BlutoothConnctionService" />
+        <service android:name=".Service.BlutDiscovery" />
+        <service
+            android:name=".Service.MyFirebaseInstanceIDService"
+            android:permission="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Activity.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".merchandising.MerchandisingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".superviseur.QuestionnaireActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".Configuration.GpsresolverActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.SynchronisationActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+        android:name=".Activity.ChoufouniContratActivity"
+        android:label="ChoufouniContratActivity"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ContratImage.ContratImageActivity"
+            android:label="ContratImageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activity.DeviceListActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.PrintActivity2"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.AuthActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.SelectArticleActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ClientActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.Client_Manager"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="Client Manager2"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.RapportActivity"
+            android:label="RapportActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.PanierActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CatalogueClientActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".Activity.CatalogueClientNActivity"
+            android:label="Nouveaux Clients"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".Activity.CatalogueTourneeActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.TourneeActivity"
+            android:label="@string/interflogin"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.MenuActivity"
+            android:label="MenuActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CatalogueActivity"
+            android:label="CatalogueActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_VenteParArticle"
+            android:label="VenteParArticleActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_Objectif"
+            android:label="Objectif"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.RVenteActivity"
+            android:label="Objectif"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_AllCommande"
+            android:label="AllCommande"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_AllCommandeLigne"
+            android:label="AllCommandeLigne"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.VisiteActivity"
+            android:label="Visite"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".Activity.VisiteResultatActivity"
+            android:label="VisiteResultat"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CatalogueTacheActivity"
+            android:label="CatalogueTacheActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.PanierAvoirActivity"
+            android:label="PanierAvoirActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.SelectArticleAvoirActivity"
+            android:label="SelectArticleAvoirActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.LivraisonActivity"
+            android:label="LivraisonActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.LivraisonDateActivity"
+            android:label="LivraisonDateActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Livraison.LivraisonDateActivity"
+            android:label="LivraisonDateActivity"
+            android:launchMode="singleTop" />
+
+
+        <activity
+            android:name=".Activity.CommandeActivity"
+            android:label="CommandeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.NewPanierActivity"
+            android:label="NewPanierActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".Activity.CommandeLigneActivity"
+            android:label="CommandeLigneActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ViewCommandeActivity"
+            android:label="ViewCommandeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_AllLivraison"
+            android:label="R_AllLivraison"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.PromotionActivity"
+            android:label="PromotionActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.PromotionArticle"
+            android:label="PromotionArticle"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.Promotions"
+            android:label="Promotions"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.PromotionPalier"
+            android:label="PromotionPalier"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CommandePromotionActivity"
+            android:label="CommandePromotionActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CommandeGratuiteActivity"
+            android:label="CommandeGratuiteActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.EncaissementTypeActivity"
+            android:label="EncaissementTypeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.EncaissementActivity"
+            android:label="EncaissementActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CommandeEncaissementActivity"
+            android:label="CommandeEncaissementActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity.EncaissementConsultationActivity"
+            android:label="EncaissementConsultationActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ViewLivraisonActivity"
+            android:label="ViewLivraisonActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.NewLivraisonPanierActivity"
+            android:label="NewLivraisonPanierActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".Activity.StockActivity"
+            android:label="StockActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ChargementActivity"
+            android:label="DemandeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ViewChargementActivity"
+            android:label="ViewChargementActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ChargementPanierActivity"
+            android:label="ChargementPanierActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".Activity.ChargementPopUpActivity"
+            android:label="ChargementPopUpActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.CustomTheme" />
+
+        <activity
+            android:name=".Activity.LieuLivraisonActivity"
+            android:label="LieuLivraisonActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.CustomTheme" />
+
+        <activity
+            android:name=".Activity.R_AllCommande2"
+            android:label="R_AllCommande2Activity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.CustomTheme" />
+
+        <activity
+            android:name=".Activity.ViewReceptionChargementActivity"
+            android:label="ViewReceptionChargementActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ReceptionChargementPanierActivity"
+            android:label="ReceptionChargementPanierActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".Activity.StockLigneActivity"
+            android:label="StockLigneActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".Activity.R_GratuitesActivity"
+            android:label="R_GratuitesActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CreditActivity"
+            android:label="CreditActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CreditEncaissementActivity"
+            android:label="CreditEncaissementActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.CreditEncaissementTypeActivity"
+            android:label="CreditEncaissementTypeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ReferencementActivity"
+            android:label="ReferencementActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activity.ReleveStockActivity"
+            android:label="ReleveStockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activity.SyncV2Activity"
+            android:label="SyncV2Activity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_CommandeLignes"
+            android:label="R_CommandeLignes"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.R_LivraisonLignes"
+            android:label="R_LivraisonLignes"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.VentesMensuellesPopUpActivity"
+            android:label="VentesMensuellesPopUpActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".TableauBordClient.TableauBordClientActivity"
+            android:label="TableauBordClientActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".recensement.RecensementActivity"
+            android:label="RecensementActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".AnnulationCommande.AnnulerCommandeActivity"
+            android:label="AnnulerCommandeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".AnnulationLivraison.AnnulerLivraisonActivity"
+            android:label="AnnulerLivraisonActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".AnnulerBC.AnnulerBcActivity"
+            android:label="AnnulerBcActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".AnnulerBC.ViewBcAAnnulerActivity"
+            android:label="ViewBcAAnnulerActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".RecensementClient.RecensementClientActivity"
+            android:label="RecensementClientActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".Activity.ScanActivity"
+            android:label="ScanActivity"/>
+
+        <activity
+
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <receiver android:name=".Service.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:text=" PLAFOND  (MAD):"
+            android:layout_margin="5dp"
+            android:id="@+id/montant_plafond"
+            android:gravity="center"
+            android:background="@color/secondary"/>
+
+        <EditText
+            android:id="@+id/valeur_plafond"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="1"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:background="@color/secondary"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:text=" MONTANT (MAD):"
+            android:layout_margin="5dp"
+            android:id="@+id/montant_encaissement"
+            android:gravity="center"
+            android:background="@color/secondary"/>
+
+        <EditText
+            android:id="@+id/valeur_ecr"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="1"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:background="@color/secondary"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:id="@+id/choisir_date"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="DATE ECHEANCE"
+            android:background="@drawable/button_shape"/>
+
+        <EditText
+            android:id="@+id/valeur_echeance"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="1"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:background="@color/secondary"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:id="@+id/terminer_ecr"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="Terminer"
+            android:background="@drawable/button_shape"/>
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:id="@+id/annuler_ecr"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="Annuler"
+            android:background="@drawable/button_shape" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

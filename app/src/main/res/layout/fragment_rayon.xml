@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newtech.newtech_sfm.merchandising.rayon.RayonFragment"
+    tools:layout="@layout/fragment_rayon">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/no_data_found_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="@string/ooops"
+                        android:textColor="@color/primary"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/unhappy"
+                        android:gravity="center"
+                        android:src="@drawable/unhappy" />
+
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:gravity="center"
+                        android:text="@string/aucune_donnee_a_afficher"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="246dp"
+                        android:layout_height="75dp"
+                        android:gravity="center"
+                        android:text="@string/synchroniser_ou_contacter_votre_administrateur"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rayon_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:scrollbars="vertical"
+                    app:layoutManager="LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/validation_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/no_data_found_ll"
+                    app:layout_constraintEnd_toStartOf="@+id/add_rayon_btn"
+                    app:layout_constraintStart_toStartOf="parent">
+
+
+                    <Button
+                        android:id="@+id/valider_vf_btn"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="90dp"
+                        android:layout_height="48dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/button_shape"
+                        android:text="@string/terminer"
+                        android:textColor="@color/blanc"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/retour_vf_btn"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="90dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/button_shape"
+                        android:text="RETOURNER"
+                        android:textColor="@color/blanc"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/add_rayon_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="16dp"
+                    android:contentDescription="@string/ajouter_rayon"
+                    app:fabSize="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_add_rayon" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

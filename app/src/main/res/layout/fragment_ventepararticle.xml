@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="40dp"
+    android:layout_centerVertical="false">
+    <!-- Load the toolbar here -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ventes_par_article_tablelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:theme="@style/TableLayoutStyle"
+                >
+
+
+                <TextView
+                    android:text="ARTICLE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"></TextView>
+
+
+                <TextView
+                    android:text="UNITE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"></TextView>
+
+                <TextView
+                    android:text="QUNATITE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"></TextView>
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonprint"
+        android:text="Imprimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:textColor="@color/blanc"
+        android:textStyle="bold"/>
+</LinearLayout>

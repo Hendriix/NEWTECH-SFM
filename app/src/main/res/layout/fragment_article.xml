@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newtech.newtech_sfm.merchandising.article.ArticleFragment"
+    tools:layout="@layout/fragment_article">
+
+
+
+    <RelativeLayout
+        android:id="@+id/titleConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Load the toolbar here -->
+        <!-- <androidx.appcompat.widget.Toolbar
+            android:id="@+id/article_visibilite_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:layout_alignParentTop="true"
+            app:theme="@style/ToolBarStyle"/> -->
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/familly_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="3dp"
+            android:background="@android:drawable/btn_dropdown"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/article_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/familly_spinner"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true">
+
+
+            <Button
+                android:id="@+id/valider_af_btn"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:text="SUIVANT"
+                android:background="@drawable/button_shape"
+                android:textColor="@color/blanc"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+
+                />
+
+            <Button
+                android:id="@+id/annuler_af_btn"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:text="annuler"
+                android:background="@drawable/button_shape"
+                android:textColor="@color/blanc"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

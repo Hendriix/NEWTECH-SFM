@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:padding="1dp"
+        android:background="@drawable/list_cell_background">>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/cv"
+            android:layout_margin="0dp"
+            >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/person_photo"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_name"
+                android:layout_toRightOf="@+id/person_photo"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_age"
+                android:layout_toRightOf="@+id/person_photo"
+                android:layout_below="@+id/person_name"
+                />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/art_vendue"
+                android:text="vente : "
+                android:textSize="12sp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/person_name"
+                android:layout_toEndOf="@+id/person_name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nbr_art_vendue"
+                        android:text="0"
+                        android:inputType="number"
+                        android:textSize="11sp"
+                        android:textColor="@color/primary"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/art_vendue"
+                        android:layout_toEndOf="@+id/person_name" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/art_reprise"
+                        android:text="  prix : "
+                        android:textSize="12sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/nbr_art_vendue"
+                        android:layout_toEndOf="@+id/person_name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/prix_article"
+                        android:text="0"
+                        android:textSize="11sp"
+                        android:inputType="number"
+                        android:textColor="@color/primary"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/art_reprise"
+                        android:layout_toEndOf="@+id/person_name" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+

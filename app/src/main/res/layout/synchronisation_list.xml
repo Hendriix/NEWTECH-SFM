@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"/>
+
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tache_search"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:layout_below="@+id/include"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tache_search"
+        android:layout_above="@+id/update_btn">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ListView
+                android:id="@+id/synchronisation_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/list_divider"
+                android:dividerHeight="1dp" />
+
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <Button
+        android:id="@+id/update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="METTER A JOUR"
+        android:background="@drawable/button_shape"
+        android:textColor="@color/blanc"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="italic"
+            android:text="Unité"
+            android:layout_margin="5dp"
+            android:id="@+id/textView" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="italic"
+            android:text="Avoir"
+            android:layout_margin="5dp"
+            android:id="@+id/textView2" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_annuler"
+            android:layout_margin="5dp"
+            android:text="annuler"
+            android:drawableRight="@drawable/icone_cancel" />
+
+    </LinearLayout>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/secondary"
+    android:gravity="center_horizontal"
+
+    >
+
+    <Spinner
+        android:id="@+id/spinner_unite"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dialog" />
+
+    <EditText
+    android:id="@+id/txt_vente"
+    android:layout_width="142dp"
+    android:layout_height="40dp"
+    android:textStyle="bold|italic"
+    android:gravity="center_horizontal"
+     android:background="@color/secondary"
+   android:layout_margin="5dp"
+   android:inputType="number"
+
+
+        />
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_add_panier"
+        android:layout_margin="5dp"
+        android:text="ajouter"
+        android:drawableRight="@drawable/add_panier" />
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:gravity="center"
+    android:weightSum="1"
+    android:background="@color/White">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="114dp"
+        android:src="@drawable/logosavola2" />
+
+    <TextView
+        android:id="@+id/information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="10dp"
+        android:background="@color/White"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:text="INFORMATION SUR L'APPLICATION"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/primary" />
+
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/White"
+        android:padding="10dp"
+        android:singleLine="false"
+        android:text="Version 7.80.20.51"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/primary" />
+
+
+</LinearLayout>

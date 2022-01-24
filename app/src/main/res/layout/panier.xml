@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+        <TableRow
+            android:id="@+id/tableRow0"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textSize="18dp"
+                android:text="Ventes"
+                android:gravity="center"
+                android:layout_span="6"></TextView>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/secondary">
+
+            <TextView
+                android:id="@+id/art_code"
+                android:text="Article code"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:typeface="serif"></TextView>
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/unite"
+                android:text="unité"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+            <TextView
+                android:id="@+id/qte"
+                android:text="Qté"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:typeface="serif"></TextView>
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="TOTAL"
+                android:id="@+id/total"
+                android:textStyle="bold"
+                android:typeface="serif"></TextView>
+        </TableRow>
+
+    </TableLayout>
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="50dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="0dp">
+    <TextView
+        android:id="@+id/panier_total"
+        android:layout_margin="1dp"
+        android:text="Total :"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/rouge"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"></TextView>
+
+
+
+     <TextView
+        android:id="@+id/nbr_panier_total"
+        android:layout_margin="1dp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/rouge"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"></TextView>
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp">
+
+
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:id="@+id/btn_valider"
+            android:text="valider"
+
+            />
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:id="@+id/btn_annuler"
+            android:text="annuler"
+
+            />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

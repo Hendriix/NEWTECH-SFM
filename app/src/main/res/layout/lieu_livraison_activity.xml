@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/visiteresultat">
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_visiteresultat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <ListView
+        android:id="@+id/llivraison_listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:choiceMode="singleChoice"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp"/>
+
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="0"
+        android:id="@+id/lieu_livraison_buttonvalider"
+        android:background="@drawable/button_shape"
+        android:textColor="@color/White"
+        android:textStyle="bold"
+        android:text="VALIDER" />
+
+
+
+</LinearLayout>

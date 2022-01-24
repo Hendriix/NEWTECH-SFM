@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="2dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:weightSum="1">
+
+    <!-- Load the toolbar here -->
+
+    <include
+        layout="@layout/toolbar_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+    <Spinner
+        android:id="@+id/famille_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dialog"
+        android:layout_below="@+id/toolbar_client"
+
+      />
+
+
+
+        <ListView
+            android:id="@+id/panier_listview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"
+            android:layout_below="@+id/famille_spinner"
+            android:layout_above="@+id/gridlayoutvalider"
+            android:layout_alignParentLeft="true"/>
+
+
+    <GridLayout
+        android:id="@+id/gridlayoutvalider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/primary">
+
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_row="0"
+            android:text="Total Panier :"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"/>
+
+        <TextView
+            android:id="@+id/total_panier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginTop="10dp"
+            android:layout_row="0"
+            android:maxLength="10"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@color/blanc"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="20dp"
+            android:layout_row="1"
+            android:text=" Remises      :"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"/>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:gravity="center"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"/>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_row="2"
+            android:text="Total Vente  :"
+            android:textStyle="bold"
+            android:textColor="@color/blanc" />
+
+        <TextView
+            android:id="@+id/total_vente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:maxLength="10"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@color/blanc"/>
+
+        <Button
+            android:id="@+id/validernewpanier"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_column="3"
+            android:layout_marginRight="15dp"
+            android:layout_row="1"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:background="@drawable/button_shape"
+            android:text=" VALIDER PANIER " />
+
+
+    </GridLayout>
+
+
+</RelativeLayout>
+

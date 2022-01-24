@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="7"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:id="@+id/date_btn"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:layout_margin="5dp"
+            android:text="DATE VISITE"
+            android:background="@drawable/button_shape"/>
+
+        <EditText
+            android:id="@+id/date_et"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:layout_margin="5dp"
+            android:text="1"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:background="@color/secondary"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:background="@drawable/title_cell_shape"
+        app:theme="@style/TableLayoutStyle"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="match_parent"
+            android:text="TOURNEE"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="match_parent"
+            android:text="CP"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="match_parent"
+            android:text="NV"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="%V"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="NF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="%F"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="%MIN"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="%NBSKU"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="%V GPS"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="%F GPS"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:textColor="@color/White"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="9"
+        >
+
+        <ListView
+            android:id="@+id/rapport_qualitatif_lvf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/rapport_qualitatif_lvs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

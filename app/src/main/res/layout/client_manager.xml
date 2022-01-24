@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/accuracy_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/quarante"
+        android:textColor="@color/onSecondary"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/client_image_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CLIENT PHOTO"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/edit_client_image_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Modifier l'image"
+            android:checked="true"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/charger_image_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/primary"
+        android:text="@string/charger_l_image_du_client"
+        android:textColor="#616161"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ac_imageview"
+        android:layout_width="match_parent"
+        android:src="@drawable/icone_pers"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="20dp"
+        android:visibility="gone"
+        android:contentDescription="@string/image_du_client"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/qr_code_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/qr_code"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/edit_qr_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modifier le qr code"
+                    android:checked="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
+                <EditText
+                    android:id="@+id/qr_code_et"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/edittext_border_bg"
+                    android:ems="10"
+                    android:hint="@string/qr_code"
+                    android:inputType="textCapCharacters"
+                    android:minHeight="48dp"
+                    android:padding="10dp" />
+
+                <ImageView
+                    android:id="@+id/scan_qr_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/qr_icone"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/identity_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/identite"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/edit_identity_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/modifier_l_identit"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/add_client_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_border_bg"
+                android:ems="10"
+                android:hint="@string/nom"
+                android:inputType="textCapCharacters"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/add_client_prenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_border_bg"
+                android:ems="10"
+                android:hint="@string/prenom"
+                android:inputType="textCapCharacters"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/aclient_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_border_bg"
+                android:ems="10"
+                android:hint="@string/telephone"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:id="@+id/adresse_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/adresse"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/edit_adresse_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modifier l'adresse"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/ac_adresse_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_border_bg"
+                android:ems="10"
+                android:hint="@string/NUMERO"
+                android:textAllCaps="true"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/ac_adresse_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_border_bg"
+                android:ems="10"
+                android:hint="@string/rue"
+                android:inputType="textCapCharacters"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/ac_adresse_q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_border_bg"
+                android:ems="10"
+                android:hint="@string/quartier"
+                android:inputType="textCapCharacters"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:id="@+id/category_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/categorie"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/edit_categorie_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modifier la catégorie"/>
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/actournee"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Spinner
+                android:id="@+id/actype"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Spinner
+                android:id="@+id/acclasse"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Spinner
+            android:id="@+id/accategorie"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:spinnerMode="dialog"
+            android:textSize="20sp"
+            android:background="@android:drawable/btn_dropdown"/>
+
+            <LinearLayout
+                android:id="@+id/gps_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/geolocalisation"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/edit_gps_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modifier gps"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/ac_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="@string/gps_latitude"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/ac_longitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="@string/gps_longitude"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/et_accuracy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="@string/accuracy"
+                android:inputType="number"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

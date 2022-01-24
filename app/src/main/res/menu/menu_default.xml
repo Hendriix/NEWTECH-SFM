@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:theme="@style/ToolBarStyle"
+    >
+
+    <!-- <item android:id="@+id/edit"
+        android:title="Edit"
+        app:showAsAction="never"/> -->
+
+    <item android:id="@+id/option1"
+        android:title="A propos"
+        app:showAsAction="never"
+        app:theme="@style/ToolBarStyle"/>
+
+    <item android:id="@+id/option2"
+        android:title="Imprimante"
+        app:showAsAction="never"
+        app:theme="@style/ToolBarStyle"/>
+
+</menu>

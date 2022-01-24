@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="8dp"
+            android:id="@+id/stockDemande_image"
+            android:layout_alignParentTop="true"
+            android:contentDescription="TODO"
+            android:src="@drawable/charge" />
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/stockDemande_image"
+            android:layout_toRightOf="@+id/stockDemande_image"
+            android:textSize="17dp"
+            android:textStyle="bold"/>
+
+        <TextView
+        android:id="@+id/title2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/stockDemande_image"
+        android:layout_below="@+id/title1"
+        android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title2"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/stockDemande_image"
+            android:textSize="15dip" />
+
+
+
+</RelativeLayout>

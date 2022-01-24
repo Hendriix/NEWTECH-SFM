@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:stretchColumns="*"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tableLayoutTimeRangeItem">
+    <TableRow
+        android:id="@+id/tableRowTimeRangeItem">
+
+        <TableLayout
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/image_chargement_article"
+                android:layout_width = "0dp"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "2"
+                android:gravity="center"
+                android:background="@drawable/cell_shape"
+                />
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width = "0dp"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1.5"
+                android:id="@+id/chargement_article_code"
+                android:gravity="center"
+                android:singleLine = "true"
+                android:background="@drawable/cell_shape"
+                android:textStyle="bold"
+                />
+
+        </TableLayout>
+
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "0.5"
+            android:id="@+id/chargement_unite"
+            android:gravity="center"
+            android:background="@drawable/cell_shape"
+            android:singleLine = "true"
+            />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:id="@+id/chargement_commandee"
+            android:gravity="center"
+            android:background="@drawable/cell_shape" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:id="@+id/chargement_approuvee"
+            android:gravity="center"
+            android:background="@drawable/cell_shape"/>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:id="@+id/chargement_livree"
+            android:gravity="center"
+            android:background="@drawable/cell_shape" />
+
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:id="@+id/chargement_receptionee"
+            android:gravity="center"
+            android:background="@drawable/cell_shape"/>
+
+    </TableRow>
+</TableLayout>

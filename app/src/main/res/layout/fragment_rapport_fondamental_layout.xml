@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/rf_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="19"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="UTILISATEUR_NOM"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/un_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="NOMRE_VISITES"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/nv_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="MOYENNE_VISITES"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/mv_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="UNIVERS"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/univers_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="CLIENTS VISITES"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/cv_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="COUVERTURE"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/couverture_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="CLIENTS FACTURES"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/cf_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="ACTIVATION"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/secondary"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/activation_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="CLIENTS FACTURES GPS"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/cfgps_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="MOYENNE_FACTURES"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/mf_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="TAUX FACTURES GPS"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tgpf_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="SKU PAR FACTURE"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/spf_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="JOURS TRAVAILLES"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/njt_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="CLIENTS FACTURES AFIA"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/cfa_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="FACTURES AFIA"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/fa_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="FACTURES HALA"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/fh_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="FACTURES SF"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:background="@color/gris"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/fsf_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gris"
+                    android:gravity="center_vertical"
+                    android:text="FACTURE RZ"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"/>
+
+                <TextView
+                    android:id="@+id/frz_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginVertical="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/gris"
+                    android:gravity="center_vertical"
+                    android:text="FACTURE ZA"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:id="@+id/fza_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="10"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@color/vert"
+                    android:textColor="@color/blanc"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/no_data_found_l"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="OOOPS !!!"
+                android:textSize="20dp"
+                android:textColor="@color/primary"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:src="@drawable/unhappy"/>
+
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:text="AUCUNE DONNEE A AFFICHER" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="246dp"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="14dp"
+                android:text="SYNCHRONISER OU CONTACTER VOTRE ADMINISTRATEUR." />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

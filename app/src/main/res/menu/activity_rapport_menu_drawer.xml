@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/vente_par_article"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/rapport_vente" />
+        <item
+            android:id="@+id/objectif"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/rapport_objectif" />
+
+        <item
+        android:id="@+id/ventes_mensuelles"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/rapport_ventes_mensuelle" />
+
+        <item
+            android:id="@+id/rapport_qualitatif"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/rapport_qualitatif" />
+
+        <item
+            android:id="@+id/rapport_fondamental"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/rapport_fondamental" />
+
+        <item
+            android:id="@+id/rapport_choufouni"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/rapport_choufouni" />
+
+
+    </group>
+
+    <item android:title="Visites">
+        <menu>
+            <item
+                android:id="@+id/visites"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/visites" />
+        </menu>
+    </item>
+
+    <item android:title="Commande">
+        <menu>
+            <item
+                android:id="@+id/commandes"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/rapport_commande" />
+        </menu>
+    </item>
+
+
+    <item android:title="Livraison">
+        <menu>
+            <item
+                android:id="@+id/livraisons"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/rapport_livraison" />
+        </menu>
+    </item>
+
+</menu>

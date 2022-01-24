@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="311dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/commande_details_tablelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:id="@+id/tableRow0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:background="@drawable/tablelayout_cell_shape">
+
+                <TextView
+                    android:id="@+id/activity_title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="4"
+                    android:gravity="center"
+                    android:text="COMMANDES LIGNES"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:background="@color/gris"
+                    android:textColor="@color/White"
+                    android:typeface="serif"
+                    ></TextView>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:theme="@style/ToolBarStyle">
+
+                <TextView
+                    android:id="@+id/ligne_code1"
+                    android:layout_width="30dp"
+                    android:text="N°"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:gravity="center"></TextView>
+
+                <TextView
+                    android:id="@+id/art_code1"
+                    android:layout_width="80dp"
+                    android:text="ARTICLE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:gravity="center"></TextView>
+
+                <TextView
+                    android:id="@+id/unite1"
+                    android:layout_width="80dp"
+                    android:text="UNITE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:gravity="center"></TextView>
+
+                <TextView
+                    android:id="@+id/qte1"
+                    android:layout_width="100dp"
+                    android:gravity="center"
+                    android:text="QUANTITE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    ></TextView>
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="173dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/commande_gratuite_details_tablelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:id="@+id/gratuiteRow0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:background="@drawable/tablelayout_cell_shape">
+
+                <TextView
+                    android:id="@+id/gratuite_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="center"
+                    android:text="GRATUITES"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:background="@color/gris"
+                    android:textColor="@color/White"
+                    android:typeface="serif"></TextView>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/gratuiteRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:theme="@style/ToolBarStyle">
+
+
+
+                <TextView
+                    android:id="@+id/gratuite_article"
+                    android:text="ARTICLE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:gravity="center"></TextView>
+
+                <TextView
+                    android:id="@+id/gratuite_quantite"
+                    android:text="QUANTITE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/tablelayout_cell_shape"
+                    android:gravity="center"></TextView>
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

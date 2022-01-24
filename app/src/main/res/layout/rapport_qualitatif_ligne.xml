@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:background="@drawable/cell_shape"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tournee_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="match_parent"
+            android:text="TOURNEE"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/cp_tv"
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="match_parent"
+            android:text="40"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/nbv_tv"
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="match_parent"
+            android:text="40"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tc_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="100"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/nbf_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="30"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/ts_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="70"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/mm_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/nbsku_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="2.7"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tgv_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="80"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tgf_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="90"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

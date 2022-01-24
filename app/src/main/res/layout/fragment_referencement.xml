@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/image_article"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="2dp"
+            android:contentDescription="@string/article_image"/>
+
+        <TextView
+            android:id="@+id/article_designation"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_toEndOf="@id/image_article"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"/>
+
+        <TextView
+            android:id="@+id/article_code"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/image_article"
+            android:layout_below="@id/article_designation"
+            android:textColor="@color/secondary"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/article_designation"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@drawable/visibilite_checked_color"
+            android:layout_marginStart="2dp"/>
+
+        <ImageView
+            android:id="@+id/image_existe"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toEndOf="@id/checkBox"
+            android:layout_marginStart="1dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_existe"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@drawable/visibilite_checked_color"
+            android:layout_marginStart="2dp"/>
+
+        <ImageView
+            android:id="@+id/image_visible"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toEndOf="@+id/checkBox2"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/image_visible"/>
+
+
+</RelativeLayout>

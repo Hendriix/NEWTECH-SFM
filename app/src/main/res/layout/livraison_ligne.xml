@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <!-- client nom -->
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/client_image"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="8dp" />
+
+    <!-- client nom -->
+    <TextView
+        android:id="@+id/client_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/client_image"
+        android:layout_toRightOf="@+id/client_image"
+        android:textSize="17dp"
+        android:textStyle="bold"
+         />
+    <!-- client code -->
+    <TextView
+        android:id="@+id/client_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/client_nom"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/client_image"
+        android:textSize="15dip" />
+
+    <!-- client addresse -->
+    <TextView
+        android:id="@+id/client_addresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/client_image"
+        android:textSize="12dip" />
+
+
+
+</RelativeLayout>

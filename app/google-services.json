@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "673061156466",
+    "firebase_url": "https://newtech-sfm.firebaseio.com",
+    "project_id": "newtech-sfm",
+    "storage_bucket": "newtech-sfm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673061156466:android:32cf81ae7fcfffa00b74eb",
+        "android_client_info": {
+          "package_name": "com.newtech.newtech_sfm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673061156466-o33q4kd9vsjiukedbu8t8m2j01765ooo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT69alL7LmSqJDfllE9ivAY7JFc_WDHJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673061156466-o33q4kd9vsjiukedbu8t8m2j01765ooo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragement.ViewReferencement">
+
+    <ListView
+        android:id="@+id/view_referencement_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/valider_view_referencement"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp" />
+
+</FrameLayout>

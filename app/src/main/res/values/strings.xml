@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">NEWTECH-SFM</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="interflogin">Interface login</string>
+    <string name="logo_savola">Logo Savola</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_pass">Mot de passe</string>
+    <string name="btn_login">Log in</string>
+    <string name="title_activity_tache">Tache</string>
+    <string name="title_activity_visite">Visite</string>
+    <string name="spinner_catalogue_title">Selectionner une famille</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="article_image">article image</string>
+    <string name="title_activity_rapport_menu">RapportMenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Rapport Menu</string>
+    <string name="nav_header_subtitle">Liste des rapports</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="rapport_vente">Ventes par article</string>
+    <string name="rapport_objectif">Objectif/Réalisation</string>
+    <string name="rapport_commande">Commandes</string>
+    <string name="rapport_commande_ligne">Commande lignes</string>
+    <string name="rapport_ventes_mensuelle">Ventes Mensuelles</string>
+    <string name="rapport_gratuites">Gratuites</string>
+    <string name="rapport_livraison">Livraisons</string>
+    <string name="rapport_livraison_ligne">Livraison lignes</string>
+    <string name="rapport_visite">rapport_visite</string>
+    <string name="visites">Visites</string>
+    <string name="rapport_qualitatif">Rapport qualitatif</string>
+    <string name="rapport_fondamental">Rapport fondamental</string>
+    <string name="adresse">ADRESSE</string>
+    <string name="geolocalisation">GEOLOCALISATION</string>
+    <string name="categorie">CATEGORIE</string>
+    <string name="prix_de_l_article">Prix de l\'article</string>
+    <string name="stock_du_rayon">Stock du rayon par unité</string>
+    <string name="rupture_rayon">Rupture Rayon</string>
+    <string name="stock_du_magazin">Stock du magazin par caisse</string>
+    <string name="rupture_magazin">Rupture Magazin</string>
+    <string name="commentaire">Commentaire</string>
+    <string name="ajouter_rayon">ajouter rayon</string>
+    <string name="ooops">OOOPS !!!</string>
+    <string name="aucune_donnee_a_afficher">AUCUNE DONNEE A AFFICHER</string>
+    <string name="synchroniser_ou_contacter_votre_administrateur">SYNCHRONISER OU CONTACTER VOTRE ADMINISTRATEUR.</string>
+    <string name="suivant">SUIVANT</string>
+    <string name="annuler">annuler</string>
+    <string name="unhappy">unhappy</string>
+    <string name="valider">VALIDER</string>
+    <string name="terminer">TERMINER</string>
+    <string name="famille">famille</string>
+    <string name="image_numero_1">IMAGE NUMERO 1</string>
+    <string name="image_numero_2">IMAGE NUMERO 2</string>
+    <string name="article">article</string>
+    <string name="largeur">Largeur</string>
+    <string name="hauteur">Hauteur</string>
+    <string name="first_image_vr">first_image_vr</string>
+    <string name="second_image_vr">second_image_vr</string>
+    <string name="rayon_par_article">Rayon par article</string>
+    <string name="details_de_la_promotion">Détails de la promotion</string>
+    <string name="promotion">promotion</string>
+    <string name="vendu_en_magazin">Vendu en magazin</string>
+    <string name="visible">Visible</string>
+    <string name="position">position</string>
+    <string name="accuracy">accuracy</string>
+    <string name="prenom">PRENOM</string>
+    <string name="telephone">TELEPHONE</string>
+    <string name="charger_l_image_du_client">CHARGER L\'IMAGE DU CLIENT</string>
+    <string name="rue">RUE</string>
+    <string name="numero">numero</string>
+    <string name="quartier">QUARTIER</string>
+    <string name="nom">NOM</string>
+    <string name="NUMERO">NUMERO</string>
+    <string name="image_du_client">image du client</string>
+    <string name="_40">40</string>
+    <string name="quarante">40</string>
+    <string name="gps_latitude">GPS_LATITUDE</string>
+    <string name="gps_longitude">GPS_LONGITUDE</string>
+    <string name="identite">IDENTITE</string>
+    <string name="modifier_l_identit">Modifier l\'identité</string>
+    <string name="qr_code">QR_CODE</string>
+    <string name="rapport_choufouni">Rapport choufouni</string>
+    <string name="savola">savola</string>
+
+
+</resources>

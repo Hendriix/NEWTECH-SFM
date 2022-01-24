@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="2dp"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <!-- Load the toolbar here -->
+
+    <include
+        android:id="@+id/sl_toolbar"
+        layout="@layout/toolbar_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+    <!--<Spinner
+        android:id="@+id/famille_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dialog"
+        android:layout_below="@+id/toolbar_client"
+
+      />-->
+
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tache_search"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/sl_toolbar"/>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tache_search"
+            android:layout_above="@+id/print_btn">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+            <ListView
+                android:id="@+id/stockligne_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/list_divider"
+                android:dividerHeight="1dp"/>
+
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <Button
+        android:id="@+id/print_btn"
+        android:text="Imprimer releve de stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:textColor="@color/blanc"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"/>
+
+
+
+
+
+</RelativeLayout>
+

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="DATE VISITE"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/visite_date_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="2020-03-10"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="RESULTAT"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/visite_resulta_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="ACTIF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/cell_shape"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="CHIFFRE D'AFFAIRE"
+            android:textColor="@color/blanc"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/visite_ca_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="200 KG"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/cell_shape"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="TONNAGE"
+            android:textColor="@color/blanc"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/title_cell_shape"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="3dp"/>
+
+        <TextView
+            android:id="@+id/visite_tonnage_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="2000 DH"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ListView
+            android:id="@+id/tableau_bord_client_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

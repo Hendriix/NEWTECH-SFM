@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/image_article"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/article_ll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?android:attr/selectableItemBackground" />
+
+    <LinearLayout
+        android:id="@+id/article_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_article">
+
+        <TextView
+            android:id="@+id/article_designation"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/article_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/prix_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/visibilite_ll"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="2dp"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/existe_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:padding="2dp"/>
+
+            <ImageView
+                android:id="@+id/referencement_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_article_visible"/>
+
+            <ImageView
+                android:id="@+id/position_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_droite"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/stock_rayon_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:padding="2dp"
+                android:src="@drawable/is_stock_rayon"/>
+
+            <ImageView
+                android:id="@+id/stock_magazin_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_stock_magazin"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left">
+
+        <ImageView
+            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:contentDescription="@drawable/icone_panier"
+            android:src="@drawable/icone_panier"
+            android:layout_margin="5dp"
+            android:id="@+id/btn_terminer"
+            android:layout_marginRight="20dp"
+           />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/lbl_total"
+            android:text="Total : "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/primary"
+            android:textStyle="bold|italic"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/total"
+
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/primary"
+            android:inputType="numberDecimal"
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+
+
+    <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dialog" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv2"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

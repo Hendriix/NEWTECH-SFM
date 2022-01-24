@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+        <TableRow
+            android:id="@+id/tableRow0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="7"
+                android:gravity="center"
+                android:text="DEMANDE LIGNES"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:background="@color/secondary"
+                android:textColor="@color/White"
+                android:typeface="serif"></TextView>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:theme="@style/ToolBarStyle">
+
+            <TextView
+                android:id="@+id/ligne_code1"
+                android:text="N°"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:id="@+id/art_code1"
+                android:text="ARTICLE"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/unite1"
+                android:text="UNITE"
+                android:textStyle="bold"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+            <TextView
+                android:id="@+id/qteC"
+                android:text="CMD"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:id="@+id/qteA"
+                android:text="APP"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:id="@+id/qteL"
+                android:text="LIV"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="REC"
+                android:id="@+id/qteR"
+                android:textStyle="bold"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:gravity="center"
+                android:typeface="serif"></TextView>
+        </TableRow>
+
+    </TableLayout>
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="50dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="0dp">
+    <TextView
+        android:id="@+id/panier_total1"
+        android:layout_margin="1dp"
+        android:text="Total :"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/primary"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"></TextView>
+
+
+
+     <TextView
+        android:id="@+id/nbr_panier_total1"
+        android:layout_margin="1dp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/gris"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"></TextView>
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp">
+
+
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:id="@+id/btn_valider1"
+            android:text="valider"
+            android:background="@drawable/button_shape"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+
+            />
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:id="@+id/btn_annuler1"
+            android:text="annuler"
+            android:background="@drawable/button_shape"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+
+            />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

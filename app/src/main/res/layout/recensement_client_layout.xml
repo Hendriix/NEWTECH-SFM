@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:text="40"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="4dp"
+        android:padding="4dp"
+        android:id="@+id/accuracy_tv"
+        android:textColor="@color/White"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/charger_image_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHARGER L'IMAGE DU CLIENT"
+        android:textColor="@color/White"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:background="@color/primary"/>
+
+    <ImageView
+        android:id="@+id/ac_imageview"
+        android:layout_width="match_parent"
+        android:src="@drawable/icone_pers"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="20dp"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dip">
+
+
+            <EditText
+                android:id="@+id/add_client_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="NOM"
+                android:inputType="textCapCharacters"
+                />
+
+            <EditText
+                android:id="@+id/add_client_prenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="PRENOM"
+                android:inputType="textCapCharacters"/>
+
+            <EditText
+                android:id="@+id/aclient_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="TELEPHONE"
+                android:inputType="phone" />
+
+            />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/adresse"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ac_adresse_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="NUMERO"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/ac_adresse_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="RUE"
+                android:inputType="textCapCharacters"/>
+
+            <EditText
+                android:id="@+id/ac_adresse_q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="QUARTIER"
+                android:inputType="textCapCharacters"
+                />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/categorie"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/distributeur_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="DISTRIBUTEUR"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+
+            <Button
+                android:id="@+id/circuit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="CIRCUIT"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Button
+                android:id="@+id/utilisateur_btn"
+                android:layout_width="match_parent"
+                android:text="UTILISATEUR"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Button
+                android:id="@+id/tournee_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="TOURNEE"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Spinner
+                android:id="@+id/actype"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Spinner
+                android:id="@+id/acclasse"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Spinner
+                android:id="@+id/accategorie"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/geolocalisation"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ac_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="numero"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/ac_longitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="numero"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/et_accuracy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edittext_border_bg"
+                android:padding="10dp"
+                android:ems="10"
+                android:hint="accuracy"
+                android:inputType="number"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

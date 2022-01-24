@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <include
+            layout="@layout/toolbar_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <GridLayout
+            android:id="@+id/gridlayoutvalider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/secondary"
+            android:layout_below="@+id/toolbar_default">
+
+            <TextView
+                android:id="@+id/valeur_commande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_column="0"
+                android:layout_row="1"
+
+                />
+
+            <TextView
+                android:id="@+id/paye_commande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_column="0"
+                android:layout_row="2"
+                />
+
+            <TextView
+                android:id="@+id/reste_commande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_column="0"
+                android:layout_row="3"
+                />
+
+            <TextView
+                android:id="@+id/valeur_livraison"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_column="1"
+                android:layout_row="1"
+
+                />
+
+            <TextView
+                android:id="@+id/paye_livraison"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_column="1"
+                android:layout_row="2"
+                />
+
+            <TextView
+                android:id="@+id/reste_livraison"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_column="1"
+                android:layout_row="3"
+                />
+
+        </GridLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="516dp"
+        android:layout_above="@+id/button_layout"
+        android:layout_below="@+id/gridlayoutvalider"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/list_encaissement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button_layout"
+        android:background="@drawable/button_shape">
+
+        <Button
+            android:id="@+id/terminer_encaissement"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@+id/annuler_encaissement"
+            android:background="@drawable/button_shape"
+            android:text="Terminer"
+            android:textColor="@color/White"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/annuler_encaissement"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_shape"
+            android:gravity="center"
+            android:text="Annuler"
+            android:textColor="@color/White"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

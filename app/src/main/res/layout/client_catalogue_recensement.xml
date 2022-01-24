@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Load the toolbar here -->
+    <include
+        layout="@layout/toolbar_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/sync_proche_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="CLIENT PROCHE"
+            android:src="@drawable/icone_sync"
+            android:background="@drawable/cell_shape"
+            android:paddingVertical="5dp"/>
+
+        <ImageView
+            android:id="@+id/sync_qr_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="CLIENT QR CODE"
+            android:src="@drawable/qr_icone"
+            android:background="@drawable/cell_shape"
+            android:paddingVertical="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/latitude_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8"
+            android:text="LATITUDE"
+            android:gravity="center"
+            android:background="@drawable/cell_shape"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/longitude_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8"
+            android:text="LONGITUDE"
+            android:gravity="center"
+            android:background="@drawable/cell_shape"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".4"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/va_textView2"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:background="@drawable/cell_shape"/>
+
+    </LinearLayout>
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_client"
+        android:focusable="false"
+        android:focusableInTouchMode="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/client_recensement_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/client_empty_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aucun client trouvé"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

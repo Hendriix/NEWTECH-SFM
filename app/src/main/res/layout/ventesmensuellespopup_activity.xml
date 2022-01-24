@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ventes_mensuelles_tablelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        app:theme="@style/TableLayoutStyle">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tablelayout_cell_shape"
+            >
+
+            <TextView
+                android:id="@+id/vm_article"
+                android:layout_width="80dp"
+                android:text="ARTICLE"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:textColor="@color/blanc"
+                android:gravity="center"></TextView>
+
+            <TextView
+                android:id="@+id/vm_quantite"
+                android:layout_width="30dp"
+                android:text="QUANTITE"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:background="@drawable/tablelayout_cell_shape"
+                android:textColor="@color/blanc"
+                android:gravity="center"></TextView>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/ventes_mensuelles_popup_listeview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

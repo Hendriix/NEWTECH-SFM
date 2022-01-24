@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollView_groupe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_default"
+        android:layout_above="@+id/valider_contrat"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/choufouni_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:spinnerMode="dialog"
+                android:textSize="20sp"
+                android:layout_gravity="center" />
+
+
+            <Button
+                android:id="@+id/charger_contrat_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CHARGER L'IMAGE DU CONTRAT"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:background="@color/primary"/>
+
+            <ImageView
+                android:id="@+id/contrat_image1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="20dp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/charger_rayon_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CHARGER L'IMAGE DU RAYON"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:background="@color/primary"/>
+
+            <ImageView
+                android:id="@+id/contrat_image2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="20dp"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/valider_contrat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VALIDER"
+        android:textColor="@color/White"
+        android:textStyle="bold"
+        android:background="@drawable/button_shape"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/no_data_found_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/toolbar_default"
+        android:visibility="visible">
+        <include
+            layout="@layout/no_data_found"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/title_cell_shape"
+        app:theme="@style/TableLayoutStyle"
+        >
+
+        <TextView
+            android:id="@+id/label_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AFIA"
+            android:textSize="20sp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/title_cell_shape"
+        app:theme="@style/TableLayoutStyle"
+        >
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TONNAGE"
+            android:textSize="20sp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NF"
+            android:textSize="20sp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:background="@drawable/tablelayout_cell_shape"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/cell_shape"
+        android:layout_marginBottom="10dp"
+        >
+    <TextView
+        android:id="@+id/tonnage_tv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:background="@drawable/cell_shape"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/nbr_factures_tv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:background="@drawable/cell_shape"
+        android:gravity="center"/>
+
+
+
+</LinearLayout>
+
+
+</LinearLayout>

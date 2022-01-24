@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newtech.newtech_sfm.rapportchoufouni.RapportChoufouniFragment"
+    tools:layout="@layout/fragment_rapport_choufouni">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/choufouni_rapport_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="OBJECTIFS"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/title_cell_shape"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="3dp"/>
+
+                <TextView
+                    android:id="@+id/objectif_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="50"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/cell_shape"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="CONTRATS"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/title_cell_shape"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="3dp"/>
+
+                <TextView
+                    android:id="@+id/contrat_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="20"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/cell_shape"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:background="@drawable/cell_shape"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="CONTRATS COMPLETS"
+                    android:textColor="@color/blanc"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/title_cell_shape"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="3dp"/>
+
+                <TextView
+                    android:id="@+id/contrat_image_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="19"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/cell_shape"
+                    android:gravity="center"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:background="@drawable/cell_shape"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="RESTE"
+                    android:textColor="@color/blanc"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/title_cell_shape"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="3dp"/>
+
+                <TextView
+                    android:id="@+id/reste_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="1"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:background="@drawable/cell_shape"
+                    android:gravity="center"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/choufouni_clients_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:scrollbars="vertical"
+                app:layoutManager="LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

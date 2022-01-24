@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accuracy">accuracy</string>
+    <string name="prenom">PRENOM</string>
+    <string name="telephone">TELEPHONE</string>
+    <string name="charger_l_image_du_client">CHARGER L\'IMAGE DU CLIENT</string>
+    <string name="rue">RUE</string>
+    <string name="numero">numero</string>
+    <string name="quartier">QUARTIER</string>
+    <string name="nom">NOM</string>
+    <string name="image_du_client">image du client</string>
+    <string name="quarante">40</string>
+    <string name="gps_latitude">GPS_LATITUDE</string>
+    <string name="gps_longitude">GPS_LONGITUDE</string>
+    <string name="identite">IDENTITE</string>
+    <string name="rapport_choufouni">Rapport choufouni</string>
+    <string name="savola">savola</string>
+</resources>

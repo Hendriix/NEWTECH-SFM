@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/button_shape">
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:text=" N°CHEQUE :"
+            android:layout_margin="5dp"
+            android:id="@+id/numcheque_ec"
+            android:gravity="center"
+            android:background="@color/secondary"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+
+        <EditText
+            android:id="@+id/valeur_num_cheque"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:background="@color/secondary"
+            />
+
+
+    </LinearLayout>
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/numcompte_ec"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="* N° Compte:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/valeur_num_compte"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:textStyle="bold|italic"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:inputType="number"/>
+
+    </LinearLayout>-->
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:text=" BANQUE :"
+            android:layout_margin="5dp"
+            android:id="@+id/nombanque_ec"
+            android:gravity="center"
+            android:background="@color/secondary"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/nombanque"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:text="* MONTANT (MAD):"
+            android:layout_margin="5dp"
+            android:id="@+id/montant_ec"
+            android:gravity="center"
+            android:background="@color/secondary"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/valeur_ec"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="1"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:background="@color/secondary"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/charger_cheque_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHARGER L'IMAGE DU CHEQUE"
+            android:textColor="@color/blanc"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:background="@color/primary"/>
+
+        <ImageView
+            android:id="@+id/cheque_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:id="@+id/terminer_ec"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="Terminer"
+            android:background="@drawable/button_shape"/>
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:id="@+id/annuler_ec"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:layout_margin="5dp"
+            android:text="Annuler"
+            android:background="@drawable/button_shape" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
