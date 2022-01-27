@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_questionnaire.xml"
+    app:startDestination="@id/questionnaireFragment">
+    <fragment
+        android:id="@+id/questionnaireFragment"
+        android:name="com.newtech.newtech_sfm.superviseur.questionnaire.QuestionnaireFragment"
+        android:label="LIST DE QUESTIONNAIRES"
+        tools:layout="@layout/fragment_questionnaire" />
+</navigation>

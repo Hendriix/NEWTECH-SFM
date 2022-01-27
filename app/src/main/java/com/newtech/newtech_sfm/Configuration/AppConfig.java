@@ -137,10 +137,9 @@ public class AppConfig {
 
     public static String URL_SYNC_VISIBILITE_RAYON = URL_SERVER + "Sync_VisibiliteRayon.php";
     public static String URL_GET_RAPPORT_CHOUFOUNI = URL_SERVER + "Rapport_Choufouni.php";
+    public static String URL_SYNC_QUESTIONNAIRE = URL_SERVER + "getListQuestionnaire.php";
 
     public static final String DATABASE_NAME = "db_sfm";
     public static final int DATABASE_VERSION = 20;
-
-
 
 }

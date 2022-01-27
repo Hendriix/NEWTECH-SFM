@@ -1,85 +1,72 @@
 package com.newtech.newtech_sfm.superviseur
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.newtech.newtech_sfm.Activity.ClientActivity
+import com.newtech.newtech_sfm.R
+import com.newtech.newtech_sfm.databinding.ActivityMerchandisingBinding
+import com.newtech.newtech_sfm.databinding.ActivityQuestionnaireBinding
+import kotlinx.android.synthetic.main.activity_merchandising.*
+import androidx.lifecycle.ViewModelProvider
+
+
+
 
 
 class QuestionnaireActivity : AppCompatActivity()  {
 
+    private lateinit var navController: NavController
+    private lateinit var questionnaireViewModel: QuestionnaireViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(binding.root)
+        val binding = DataBindingUtil.setContentView<ActivityQuestionnaireBinding>(
+            this,
+            R.layout.activity_questionnaire
+        )
 
-        val parentLinLayout = LinearLayout(this)
-        parentLinLayout.orientation = LinearLayout.VERTICAL
+        setContentView(binding.root)
 
-        val linLayoutParam =
-            ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        setSupportActionBar(toolbar)
 
-        setContentView(parentLinLayout, linLayoutParam)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.myNavHostFragment) as NavHostFragment
+        navController = navHostFragment.navController
 
-        val lpView = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        questionnaireViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(
+            this.application
+        ).create(QuestionnaireViewModel::class.java)
 
-        /*TEXT VIEW*/
-        val tv = TextView(this)
-        tv.text = "TextView"
-        tv.layoutParams = lpView
-        parentLinLayout.addView(tv)
 
-        /*RADIO GROUP*/
-        val rg = RadioGroup(this)
-        rg.orientation = RadioGroup.VERTICAL
-        rg.layoutParams = lpView
-        val options = arrayOf("Oui", "Non")
-        for (i in options.indices) {
-            // create a radio button
-            val rb = RadioButton(this)
-            // set text for the radio button
-            rb.text = options[i]
-            // assign an automatically generated id to the radio button
-            rb.id = View.generateViewId()
-            // add radio button to the radio group
-            rg.addView(rb)
+        setupActionBarWithNavController(navController)
+
+    }
+
+    override fun onNavigateUp(): Boolean {
+
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        val id = navController.currentDestination!!.id
+
+        if (id == R.id.questionnaireFragment) {
+            val intent = Intent(this, ClientActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            onNavigateUp()
         }
-        parentLinLayout.addView(rg)
-
-        /*CHECKBOX*/
-
-        val childLinLayout = LinearLayout(this)
-        childLinLayout.orientation = LinearLayout.HORIZONTAL
-
-        childLinLayout.layoutParams = lpView
-        val firstCb = CheckBox(this)
-        firstCb.layoutParams = lpView
-        firstCb.text = "KALBI"
-        firstCb.isChecked = false
-
-        val secondCb = CheckBox(this)
-        secondCb.layoutParams = lpView
-        secondCb.text = "TEKHMAMI"
-        secondCb.isChecked = true
-
-
-        val thirdCb = CheckBox(this)
-        thirdCb.layoutParams = lpView
-        thirdCb.text = "BACH YATINI ALLAH"
-        thirdCb.isChecked = true
-
-
-        childLinLayout.addView(firstCb)
-        childLinLayout.addView(secondCb)
-        childLinLayout.addView(thirdCb)
-
-        parentLinLayout.addView(childLinLayout)
-
-        val spinner : Spinner = Spinner(this)
-        parentLinLayout.addView(spinner)
-
 
     }
 

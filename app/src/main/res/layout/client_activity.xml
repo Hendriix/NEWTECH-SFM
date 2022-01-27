@@ -200,7 +200,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/blanc"
                 android:layout_margin="5dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 />
 
         </LinearLayout>

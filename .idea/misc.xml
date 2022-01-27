@@ -20,6 +20,7 @@
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/visibilite_checked_color.xml" value="0.1" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_merchandising.xml" value="0.13703703703703704" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_questionnaire.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_rapport_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/alert_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/alert_dialog_avoir.xml" value="0.1" />
@@ -43,6 +44,7 @@
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_article_recap.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_dialog_rayon.xml" value="0.15" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_dialog_visibilite.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_questionnaire.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_rapport_choufouni.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_rayon.xml" value="0.22" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_ventes_mensuelles.xml" value="0.20416666666666666" />
@@ -50,6 +52,7 @@
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/nav_header_rapport_menu.xml" value="0.2" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/new_panier.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/no_data_found.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/questionnaire_custom_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/rapport_choufouni_article.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/rapport_choufouni_article_item.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/rapport_choufouni_client_item.xml" value="0.20416666666666666" />
