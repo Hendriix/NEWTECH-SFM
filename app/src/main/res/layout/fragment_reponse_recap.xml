@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newtech.newtech_sfm.superviseur.recap.ReponseRecapFragment"
+    tools:layout="@layout/fragment_questionnaire">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e6e6e6">
+
+
+        <LinearLayout
+            android:id="@+id/recap_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:padding="10dp" />
+
+
+    </ScrollView>
+
+</layout>

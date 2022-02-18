@@ -6,83 +6,67 @@
     android:layout_height="wrap_content"
     android:weightSum="2"
     android:orientation="horizontal"
-    android:padding="3dp">
+    android:padding="20dp"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:elevation="20dp"
+    android:background="@drawable/questionnaire_item_round_corner">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.3"
         android:layout_height="140dp"
         android:orientation="vertical"
-        android:padding="3dp"
+        android:padding="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="parent"
+        android:gravity="center">
 
         <TextView
+            android:id="@+id/nom_questionnaire_tv"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="CODE "
+            android:text="@string/acompagnement"
             android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_gravity="center"/>
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_bold"/>
 
         <TextView
+            android:id="@+id/questionnaire_description_tv"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="NOM"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
             android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="DEPARTEMENT"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_gravity="center"/>
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_regular"/>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:layout_height="140dp"
         android:orientation="vertical"
-        android:padding="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="parent">
 
-        <TextView
+        <ImageView
             android:id="@+id/code_questionnaire_tv"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="CODE RAYON"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="17sp"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/nom_questionnaire_tv"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="FAMILLE"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/departement_questionnaire_tv"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="DEPARTEMENT"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:src="@drawable/survey_ic"
+            android:padding="10dp"
+            android:contentDescription="questionnaire_iv"/>
 
 
 

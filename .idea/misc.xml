@@ -14,10 +14,12 @@
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/ic_middle_top.xml" value="0.2203125" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/ic_right_middle.xml" value="0.2203125" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/ic_right_top.xml" value="0.2203125" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/questionnaire_item_round_corner.xml" value="0.1265" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/referencement_button_background.xml" value="0.1" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/referencement_divider.xml" value="0.1" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/drawable/visibilite_checked_color.xml" value="0.1" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/font/alegreya_bold.xml" value="0.234375" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_merchandising.xml" value="0.13703703703703704" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/activity_questionnaire.xml" value="0.20416666666666666" />
@@ -47,12 +49,14 @@
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_questionnaire.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_rapport_choufouni.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_rayon.xml" value="0.22" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_reponse.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_reponse_recap.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/fragment_ventes_mensuelles.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/menu_dashboard_layout.xml" value="0.22" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/nav_header_rapport_menu.xml" value="0.2" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/new_panier.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/no_data_found.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/questionnaire_custom_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/questionnaire_custom_item.xml" value="0.22" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/rapport_choufouni_article.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/rapport_choufouni_article_item.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/rapport_choufouni_client_item.xml" value="0.20416666666666666" />
@@ -62,6 +66,7 @@
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/releve_stock.xml" value="0.1" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/stock_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/tableau_bord_client_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/tache_catalogue.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/toolbar_client.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/toolbar_default.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/saylani.chouaib/Desktop/NEWTECH-SFM/app/src/main/res/layout/vente_kilogramme_ligne.xml" value="0.20416666666666666" />

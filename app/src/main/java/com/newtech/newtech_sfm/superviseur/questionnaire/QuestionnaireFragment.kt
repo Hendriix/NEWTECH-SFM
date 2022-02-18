@@ -1,30 +1,28 @@
 package com.newtech.newtech_sfm.superviseur.questionnaire
 
-import android.app.Application
+
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.newtech.newtech_sfm.Metier.LogSync
 import com.newtech.newtech_sfm.Metier.Questionnaire
 import com.newtech.newtech_sfm.R
-import com.newtech.newtech_sfm.databinding.FragmentArticleBinding
 import com.newtech.newtech_sfm.databinding.FragmentQuestionnaireBinding
 import com.newtech.newtech_sfm.superviseur.QuestionnaireViewModel
 import kotlinx.android.synthetic.main.fragment_questionnaire.*
 
-class QuestionnaireFragment() : QuestionnaireFragmentView, Fragment() {
+class QuestionnaireFragment() :  Fragment() {
 
     private lateinit var binding: FragmentQuestionnaireBinding
     private val questionnaireViewModel : QuestionnaireViewModel by activityViewModels()
@@ -46,18 +44,29 @@ class QuestionnaireFragment() : QuestionnaireFragmentView, Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // getting the bundle back from the android
+        val bundle = this.arguments
+        Log.d("ReponseFragment", "onViewCreated: "+bundle!!.getString("CLIENT_CODE"))
+
+        questionnaireViewModel.setClientCode(bundle!!.getString("CLIENT_CODE")!!)
+        questionnaireViewModel.setVisiteCode(bundle!!.getString("VISITE_CODE")!!)
+        questionnaireViewModel.setDistributeurCode(bundle!!.getString("DISTRIBUTEUR_CODE")!!)
+        questionnaireViewModel.setUtilisateurCode(bundle!!.getString("UTILISATEUR_CODE")!!)
+
         val questionnaireRecyclerView : RecyclerView = binding.questionnaireRecyclerView
 
-        questionnaireRecyclerView.addItemDecoration(
+        /*questionnaireRecyclerView.addItemDecoration(
             DividerItemDecoration(
                 context,
                 LinearLayoutManager.VERTICAL
             )
-        )
+        )*/
+
+        val navController: NavController = this.findNavController()
 
         questionnaireViewModel.getQuestionnaires().observe(viewLifecycleOwner,  Observer<List<Questionnaire>>{ questionnaires ->
             // update UI
-            questionnaireFragmentAdapter = QuestionnaireFragmentAdapter(questionnaires,context)
+            questionnaireFragmentAdapter = QuestionnaireFragmentAdapter(navController,questionnaires,context)
             questionnaire_recycler_view.adapter = questionnaireFragmentAdapter
             questionnaireFragmentAdapter.notifyDataSetChanged()
         })

@@ -469,6 +469,12 @@ public class ClientActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
                     Intent intent = new Intent(ClientActivity.this, QuestionnaireActivity.class);
+
+                    intent.putExtra("CLIENT_CODE",clientCourant.getCLIENT_CODE());
+                    intent.putExtra("VISITE_CODE",visite_code);
+                    intent.putExtra("DISTRIBUTEUR_CODE",distributeur_code);
+                    intent.putExtra("UTILISATEUR_CODE",utilisateur_code);
+
                     startActivity(intent);
                     finish();
                 }

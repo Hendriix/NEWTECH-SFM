@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.newtech.newtech_sfm.Metier.Questionnaire
 import com.newtech.newtech_sfm.R
 
 class QuestionnaireFragmentAdapter (
+    private val navController: NavController,
     private val dataSet: List<Questionnaire>,
     private val context: Context?
 ) :
@@ -18,16 +21,16 @@ class QuestionnaireFragmentAdapter (
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var mView: View? = null
-        val code_questionnaire: TextView
+
         val nom_questionnaire: TextView
-        val departement_questionnaire: TextView
+        val description_questionnaire: TextView
 
         init {
 
             mView = view
-            code_questionnaire = view.findViewById(R.id.code_questionnaire_tv)
+
             nom_questionnaire = view.findViewById(R.id.nom_questionnaire_tv)
-            departement_questionnaire = view.findViewById(R.id.departement_questionnaire_tv)
+            description_questionnaire = view.findViewById(R.id.questionnaire_description_tv)
 
         }
     }
@@ -45,9 +48,15 @@ class QuestionnaireFragmentAdapter (
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val questionnaire = dataSet.get(position)
 
-        viewHolder.code_questionnaire.text = questionnaire.ID.toString()
         viewHolder.nom_questionnaire.text = questionnaire.QUESTIONNAIRE_NOM
-        viewHolder.departement_questionnaire.text = questionnaire.DEPARTEMENT
+        viewHolder.description_questionnaire.text = questionnaire.DESCRIPTION
+
+
+        viewHolder.mView?.setOnClickListener{
+
+            navController.navigate(R.id.action_questionnaireFragment_to_reponseFragment)
+
+        }
 
     }
 

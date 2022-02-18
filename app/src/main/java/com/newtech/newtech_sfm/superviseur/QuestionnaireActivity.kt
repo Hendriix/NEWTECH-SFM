@@ -3,29 +3,23 @@ package com.newtech.newtech_sfm.superviseur
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.newtech.newtech_sfm.Activity.ClientActivity
 import com.newtech.newtech_sfm.R
-import com.newtech.newtech_sfm.databinding.ActivityMerchandisingBinding
 import com.newtech.newtech_sfm.databinding.ActivityQuestionnaireBinding
 import kotlinx.android.synthetic.main.activity_merchandising.*
-import androidx.lifecycle.ViewModelProvider
 
 
-
-
-
-class QuestionnaireActivity : AppCompatActivity()  {
+class QuestionnaireActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var questionnaireViewModel: QuestionnaireViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +40,22 @@ class QuestionnaireActivity : AppCompatActivity()  {
             this.application
         ).create(QuestionnaireViewModel::class.java)
 
+        val bundle = Bundle()
+
+        val intent = intent
+        if (intent != null) {
+
+            bundle.putString("CLIENT_CODE",intent.getStringExtra("CLIENT_CODE"))
+            bundle.putString("VISITE_CODE",intent.getStringExtra("VISITE_CODE"))
+            bundle.putString("DISTRIBUTEUR_CODE",intent.getStringExtra("DISTRIBUTEUR_CODE"))
+            bundle.putString("UTILISATEUR_CODE",intent.getStringExtra("UTILISATEUR_CODE"))
+        }
+
+        navController.setGraph(R.navigation.nav_questionnaire,bundle)
 
         setupActionBarWithNavController(navController)
+
+        // creating a bundle object
 
     }
 
@@ -67,7 +75,6 @@ class QuestionnaireActivity : AppCompatActivity()  {
         } else {
             onNavigateUp()
         }
-
     }
 
 }

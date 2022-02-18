@@ -1,9 +1,10 @@
 package com.newtech.newtech_sfm.Metier
 
+import android.util.Log
 import org.json.JSONException
 import org.json.JSONObject
 
-class Questionnaire (
+class QuestionnaireQR (
 
                     var ID: Int = 0,
                     var QUESTIONNAIRE_CODE: String = "",
@@ -20,11 +21,13 @@ class Questionnaire (
                     var COMMENTAIRE_DEBUT: String = "",
                     var COMMENTAIRE_FIN: String = "",
                     var COMMENTAIRE: String = "",
-                    var INACTIF: Int = 0
+                    var INACTIF: Int = 0,
+                    var TB_QUESTION_REPONSES: ArrayList<QuestionReponse>? = null
 
                     ){
 
     constructor (questionnaire: JSONObject) : this(){
+        val tbQuestionReponsesArrayList = ArrayList<QuestionReponse>()
         try {
             this.ID = questionnaire.getInt("ID")
             this.QUESTIONNAIRE_CODE = questionnaire.getString("QUESTIONNAIRE_CODE")
@@ -42,6 +45,19 @@ class Questionnaire (
             this.COMMENTAIRE_FIN = questionnaire.getString("COMMENTAIRE_FIN")
             this.COMMENTAIRE = questionnaire.getString("COMMENTAIRE")
             this.INACTIF = questionnaire.getInt("INACTIF")
+            val tbQuestionReponse = questionnaire.getJSONArray("TB_QUESTION_REPONSES")
+            if (tbQuestionReponse.length() > 0) {
+
+                for (i in 0 until tbQuestionReponse.length()) {
+                    val secondObject = tbQuestionReponse.getJSONObject(i)
+                    val tbReponse = QuestionReponse(secondObject)
+                    tbQuestionReponsesArrayList.add(tbReponse)
+                }
+
+            } else {
+                Log.d("QuestionnaireQR", "onResponse: false")
+            }
+            this.TB_QUESTION_REPONSES = tbQuestionReponsesArrayList
 
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -49,7 +65,7 @@ class Questionnaire (
     }
 
     override fun toString(): String {
-        return "Questionnaire(ID=$ID, QUESTIONNAIRE_CODE='$QUESTIONNAIRE_CODE', QUESTIONNAIRE_NOM='$QUESTIONNAIRE_NOM', CATEGORIE_CODE='$CATEGORIE_CODE', STATUT_CODE='$STATUT_CODE', TYPE_CODE='$TYPE_CODE', CREATEUR_CODE='$CREATEUR_CODE', DATE_CREATION='$DATE_CREATION', DEPARTEMENT_CODE='$DEPARTEMENT_CODE', DATE_DEBUT='$DATE_DEBUT', DATE_FIN='$DATE_FIN', DESCRIPTION='$DESCRIPTION', COMMENTAIRE_DEBUT='$COMMENTAIRE_DEBUT', COMMENTAIRE_FIN='$COMMENTAIRE_FIN', COMMENTAIRE='$COMMENTAIRE', INACTIF=$INACTIF)"
+        return "QuestionnaireQR(ID=$ID, QUESTIONNAIRE_CODE='$QUESTIONNAIRE_CODE', QUESTIONNAIRE_NOM='$QUESTIONNAIRE_NOM', CATEGORIE_CODE='$CATEGORIE_CODE', STATUT_CODE='$STATUT_CODE', TYPE_CODE='$TYPE_CODE', CREATEUR_CODE='$CREATEUR_CODE', DATE_CREATION='$DATE_CREATION', DEPARTEMENT_CODE='$DEPARTEMENT_CODE', DATE_DEBUT='$DATE_DEBUT', DATE_FIN='$DATE_FIN', DESCRIPTION='$DESCRIPTION', COMMENTAIRE_DEBUT='$COMMENTAIRE_DEBUT', COMMENTAIRE_FIN='$COMMENTAIRE_FIN', COMMENTAIRE='$COMMENTAIRE', INACTIF=$INACTIF, TB_QUESTION_REPONSES=$TB_QUESTION_REPONSES)"
     }
 
 

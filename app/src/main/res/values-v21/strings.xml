@@ -15,4 +15,6 @@
     <string name="identite">IDENTITE</string>
     <string name="rapport_choufouni">Rapport choufouni</string>
     <string name="savola">savola</string>
+    <string name="acompagnement">Acompagnement</string>
+    <string name="description">Description</string>
 </resources>

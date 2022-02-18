@@ -8,5 +8,31 @@
         android:id="@+id/questionnaireFragment"
         android:name="com.newtech.newtech_sfm.superviseur.questionnaire.QuestionnaireFragment"
         android:label="LIST DE QUESTIONNAIRES"
-        tools:layout="@layout/fragment_questionnaire" />
+        tools:layout="@layout/fragment_questionnaire" >
+        <action
+            android:id="@+id/action_questionnaireFragment_to_reponseFragment"
+            app:destination="@id/reponseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reponseFragment"
+        android:name="com.newtech.newtech_sfm.superviseur.reponse.ReponseFragment"
+        android:label="QUESTIONNAIRE"
+        tools:layout="@layout/fragment_reponse" >
+        <action
+            android:id="@+id/action_reponseFragment_to_reponseRecapFragment"
+            app:destination="@id/reponseRecapFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_reponseFragment_to_questionnaireFragment"
+            app:destination="@id/questionnaireFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reponseRecapFragment"
+        android:name="com.newtech.newtech_sfm.superviseur.recap.ReponseRecapFragment"
+        android:label="RECAPITULATIF"
+        tools:layout="@layout/fragment_reponse_recap" >
+        <action
+            android:id="@+id/action_reponseRecapFragment_to_reponseFragment2"
+            app:destination="@id/reponseFragment" />
+    </fragment>
 </navigation>
