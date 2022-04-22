@@ -223,7 +223,7 @@ public class LivraisonLigne {
             this.SOURCE=commandeLigne.getSOURCE();
             this.VERSION="non_verifiee";*/
 
-            this.LIVRAISONLIGNE_CODE=commandeLigne.getCOMMANDELIGNE_CODE();
+            /*this.LIVRAISONLIGNE_CODE=commandeLigne.getCOMMANDELIGNE_CODE();
             this.LIVRAISON_CODE=livraison_code;
             this.COMMANDELIGNE_CODE=commandeLigne.getCOMMANDELIGNE_CODE();
             this.COMMANDE_CODE=commandeLigne.getCOMMANDE_CODE();
@@ -246,6 +246,36 @@ public class LivraisonLigne {
             this.MONTANT_BRUT=getNumberRounded(commandeLigne.getMONTANT_BRUT());
             this.REMISE=getNumberRounded(commandeLigne.getREMISE());
             this.MONTANT_NET=getNumberRounded(commandeLigne.getMONTANT_NET());
+            this.COMMENTAIRE="to_insert";
+            this.CREATEUR_CODE=user.getUTILISATEUR_CODE();
+            this.DATE_CREATION=df.format(Calendar.getInstance().getTime());
+            this.UNITE_CODE=commandeLigne.getUNITE_CODE();
+            this.SOURCE=commandeLigne.getSOURCE();
+            this.VERSION="non_verifiee";*/
+
+            this.LIVRAISONLIGNE_CODE=commandeLigne.getCOMMANDELIGNE_CODE();
+            this.LIVRAISON_CODE=livraison_code;
+            this.COMMANDELIGNE_CODE=commandeLigne.getCOMMANDELIGNE_CODE();
+            this.COMMANDE_CODE=commandeLigne.getCOMMANDE_CODE();
+            this.FACTURE_CODE=commandeLigne.getFACTURE_CODE();
+            this.FAMILLE_CODE=commandeLigne.getFAMILLE_CODE();
+            this.ARTICLE_CODE=commandeLigne.getARTICLE_CODE();
+            this.ARTICLE_DESIGNATION=commandeLigne.getARTICLE_DESIGNATION();
+            this.ARTICLE_NBUS_PAR_UP=commandeLigne.getARTICLE_NBUS_PAR_UP();
+            this.ARTICLE_PRIX=commandeLigne.getARTICLE_PRIX();
+            this.QTE_COMMANDEE=commandeLigne.getQTE_COMMANDEE()-commandeLigne.getQTE_LIVREE();
+            this.QTE_LIVREE=this.QTE_COMMANDEE;
+            this.CAISSE_COMMANDEE=commandeLigne.getCAISSE_COMMANDEE()-commandeLigne.getCAISSE_LIVREE();
+            this.CAISSE_LIVREE=this.getCAISSE_COMMANDEE();
+            this.LITTRAGE_COMMANDEE=commandeLigne.getLITTRAGE_COMMANDEE()-commandeLigne.getLITTRAGE_LIVREE();
+            this.LITTRAGE_LIVREE=this.getLITTRAGE_COMMANDEE();
+            this.TONNAGE_COMMANDEE=commandeLigne.getTONNAGE_COMMANDEE()-commandeLigne.getTONNAGE_LIVREE();
+            this.TONNAGE_LIVREE=this.getTONNAGE_COMMANDEE();
+            this.KG_COMMANDEE=commandeLigne.getKG_COMMANDEE()-commandeLigne.getKG_LIVREE();
+            this.KG_LIVREE=this.getKG_COMMANDEE();
+            this.MONTANT_BRUT=getNumberRounded(commandeLigne.ARTICLE_PRIX*this.QTE_LIVREE);
+            this.REMISE=getNumberRounded(commandeLigne.getREMISE());
+            this.MONTANT_NET=getNumberRounded(this.MONTANT_BRUT-this.REMISE);
             this.COMMENTAIRE="to_insert";
             this.CREATEUR_CODE=user.getUTILISATEUR_CODE();
             this.DATE_CREATION=df.format(Calendar.getInstance().getTime());
@@ -313,7 +343,7 @@ public class LivraisonLigne {
         this.SOURCE=livraison.getSOURCE();
     }*/
 
-    public LivraisonLigne(Livraison livraison,Article monArticle , String date_livraison ,float quantite , String unite,double prix,int size,Context context) {
+    public LivraisonLigne(Livraison livraison,Article monArticle , String date_livraison ,int quantite , String unite,double prix,int size,Context context) {
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         UniteManager uniteManager = new UniteManager(context);

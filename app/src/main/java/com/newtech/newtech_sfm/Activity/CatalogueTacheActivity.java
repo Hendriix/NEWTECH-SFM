@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -37,7 +36,7 @@ public class CatalogueTacheActivity extends AppCompatActivity implements SearchV
 
     SearchView mSearchView;
     Tache_Adapter tache_adapter;
-    List<Tache> tache_list = new ArrayList<Tache>();
+    List<Tache> tache_list = new ArrayList<>();
     //List<TachePlanification> tacheplanification_list=new ArrayList<>();
     ListView mListView1;
     ListDataSave listDataSave;
@@ -49,12 +48,12 @@ public class CatalogueTacheActivity extends AppCompatActivity implements SearchV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tache_catalogue);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_default);
+        Toolbar toolbar = findViewById(R.id.toolbar_default);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mSearchView=(SearchView) findViewById(R.id.tache_search);
+        mSearchView=findViewById(R.id.tache_search);
 
         tacheManager= new TacheManager(getApplicationContext());
         listDataSave = new ListDataSave(getApplicationContext(),"MyPref");
@@ -69,7 +68,7 @@ public class CatalogueTacheActivity extends AppCompatActivity implements SearchV
         //Toast.makeText(CatalogueTacheActivity.this,String.valueOf(tache_list.size()),
                 //Toast.LENGTH_LONG).show();
 
-        mListView1=(ListView) findViewById(R.id.tache_listview1);
+        mListView1= findViewById(R.id.tache_listview1);
 
         View child = getLayoutInflater().inflate(R.layout.no_data_found, null);
         ((ViewGroup)mListView1.getParent()).addView(child);
@@ -81,75 +80,78 @@ public class CatalogueTacheActivity extends AppCompatActivity implements SearchV
         mListView1.setTextFilterEnabled(true);
         setupSearchView();
 
-        mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        mListView1.setOnItemClickListener((parent, view, position, id) -> {
 
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent();
 
-                Intent intent = new Intent();
+            Tache tache = (Tache)tache_adapter.getItem(position);
+            listDataSave.remove("client_list");
+            listDataSave.remove("tournee_code");
+            listDataSave.remove("type_code");
+            listDataSave.remove("classe_code");
+            listDataSave.remove("categorie_code");
 
-                Tache tache = (Tache)tache_adapter.getItem(position); 
+            if(tache.getTYPE_CODE().equals("LIVRAISON")){
+                Toast.makeText(CatalogueTacheActivity.this,"LIVRAISON",
+                        Toast.LENGTH_LONG).show();
+
+                intent = new Intent(CatalogueTacheActivity.this, com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity.class);
+                //Log.d("afftectation valeur", "onItemClick: "+tache.getAFFECTATION_VALEUR());
+                intent.putExtra("TOURNEE_CODE",tache.getAFFECTATION_VALEUR());
+                /*com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity.activity_source="CatalogueTacheActivity";
+                com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity.tache_code=tache.getTACHE_CODE();
+                com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity.affectation_type=tache.getAFFECTATION_TYPE();
+                com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity.affectation_valeur=tache.getAFFECTATION_VALEUR();
+                com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity.commande_source="LIVRAISON";*/
+
+                listDataSave.setDataString("ACTIVITY_SOURCE","CatalogueTacheActivity");
+                listDataSave.setDataString("TACHE_CODE",tache.getTACHE_CODE());
+                listDataSave.setDataString("AFFECTATION_TYPE",tache.getAFFECTATION_TYPE());
+                listDataSave.setDataString("AFFECTATION_VALEUR",tache.getAFFECTATION_VALEUR());
+                listDataSave.setDataString("COMMANDE_SOURCE","LIVRAISON");
+                startActivity(intent);
+                finish();
+
+            }else if(tache.getTYPE_CODE().equals("ENCAISSEMENT")){
+                intent = new Intent(CatalogueTacheActivity.this, LivraisonDateActivity.class);
+
+                intent.putExtra("TOURNEE_CODE",tache.getAFFECTATION_VALEUR());
+                intent.putExtra("AFFECTATION_TYPE",tache.getAFFECTATION_TYPE());
+                LivraisonDateActivity.activity_source="CatalogueTacheActivity";
+                LivraisonDateActivity.tache_code=tache.getTACHE_CODE();
+                LivraisonDateActivity.affectation_type=tache.getAFFECTATION_TYPE();
+                LivraisonDateActivity.affectation_valeur=tache.getAFFECTATION_VALEUR();
+                LivraisonDateActivity.commande_source="ENCAISSEMENT";
+
+                startActivity(intent);
+                finish();
+
+            }else if(tache.getTYPE_CODE().equals("VISITE")){
+                intent = new Intent(CatalogueTacheActivity.this, VisiteActivity.class);
+
+                VisiteActivity.commande_source="VISITE";
+                VisiteActivity.activity_source="CatalogueTacheActivity";
+                VisiteActivity.affectation_type=tache.getAFFECTATION_TYPE();
+                VisiteActivity.affectation_valeur=tache.getAFFECTATION_VALEUR();
+                VisiteActivity.tache_code=tache.getTACHE_CODE();
+
                 listDataSave.remove("client_list");
                 listDataSave.remove("tournee_code");
                 listDataSave.remove("type_code");
                 listDataSave.remove("classe_code");
                 listDataSave.remove("categorie_code");
 
-                if(tache.getTYPE_CODE().equals("LIVRAISON")){
-                    Toast.makeText(CatalogueTacheActivity.this,"LIVRAISON",
-                            Toast.LENGTH_LONG).show();
-
-                    intent = new Intent(CatalogueTacheActivity.this, com.newtech.newtech_sfm.Livraison.LivraisonDateActivity.class);
-                    //Log.d("afftectation valeur", "onItemClick: "+tache.getAFFECTATION_VALEUR());
-                    intent.putExtra("TOURNEE_CODE",tache.getAFFECTATION_VALEUR());
-                    com.newtech.newtech_sfm.Livraison.LivraisonDateActivity.activity_source="CatalogueTacheActivity";
-                    com.newtech.newtech_sfm.Livraison.LivraisonDateActivity.tache_code=tache.getTACHE_CODE();
-                    com.newtech.newtech_sfm.Livraison.LivraisonDateActivity.affectation_type=tache.getAFFECTATION_TYPE();
-                    com.newtech.newtech_sfm.Livraison.LivraisonDateActivity.affectation_valeur=tache.getAFFECTATION_VALEUR();
-                    com.newtech.newtech_sfm.Livraison.LivraisonDateActivity.commande_source="LIVRAISON";
-
-                    startActivity(intent);
-                    finish();
-
-                }else if(tache.getTYPE_CODE().equals("ENCAISSEMENT")){
-                    intent = new Intent(CatalogueTacheActivity.this, LivraisonDateActivity.class);
-
-                    intent.putExtra("TOURNEE_CODE",tache.getAFFECTATION_VALEUR());
-                    intent.putExtra("AFFECTATION_TYPE",tache.getAFFECTATION_TYPE());
-                    LivraisonDateActivity.activity_source="CatalogueTacheActivity";
-                    LivraisonDateActivity.tache_code=tache.getTACHE_CODE();
-                    LivraisonDateActivity.affectation_type=tache.getAFFECTATION_TYPE();
-                    LivraisonDateActivity.affectation_valeur=tache.getAFFECTATION_VALEUR();
-                    LivraisonDateActivity.commande_source="ENCAISSEMENT";
-
-                    startActivity(intent);
-                    finish();
-
-                }else if(tache.getTYPE_CODE().equals("VISITE")){
-                    intent = new Intent(CatalogueTacheActivity.this, VisiteActivity.class);
-
-                    VisiteActivity.commande_source="VISITE";
-                    VisiteActivity.activity_source="CatalogueTacheActivity";
-                    VisiteActivity.affectation_type=tache.getAFFECTATION_TYPE();
-                    VisiteActivity.affectation_valeur=tache.getAFFECTATION_VALEUR();
-                    VisiteActivity.tache_code=tache.getTACHE_CODE();
-                    listDataSave.remove("client_list");
-                    listDataSave.remove("tournee_code");
-                    listDataSave.remove("type_code");
-                    listDataSave.remove("classe_code");
-                    listDataSave.remove("categorie_code");
-
-                    
-
-                }else{
-                    Toast.makeText(CatalogueTacheActivity.this,"AUTRE",
-                            Toast.LENGTH_LONG).show();
-                }
-
-                startActivity(intent);
-                finish();
 
 
+            }else{
+                Toast.makeText(CatalogueTacheActivity.this,"AUTRE",
+                        Toast.LENGTH_LONG).show();
             }
+
+            startActivity(intent);
+            finish();
+
+
         });
 
         setTitle("LES TACHES DU JOUR");

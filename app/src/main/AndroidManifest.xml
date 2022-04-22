@@ -74,6 +74,11 @@
             android:screenOrientation="portrait"/>
 
         <activity
+            android:name=".mob_cmd_al.CommandeNonClotureeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+
+        <activity
             android:name=".Configuration.GpsresolverActivity"
             android:launchMode="singleTop" />
         <activity
@@ -231,6 +236,11 @@
             android:label="LivraisonDateActivity"
             android:launchMode="singleTop" />
 
+        <activity
+            android:name=".livraisoncnc.LivraisonDateActivity"
+            android:label="LivraisonDateActivity"
+            android:launchMode="singleTop" />
+
 
         <activity
             android:name=".Activity.CommandeActivity"
@@ -299,6 +309,21 @@
             android:launchMode="singleTop" />
 
         <activity
+            android:name=".mob_cmd_al.mob_encaissement.MobEncaissementActivity"
+            android:label="MobEncaissementActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".mob_cmd_al.mob_encaissement.MobEncaissementTypeActivity"
+            android:label="MobEncaissementTypeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".mob_cmd_al.mob_encaissement.MobEncaissementConsultationActivity"
+            android:label="MobEncaissementTypeActivity"
+            android:launchMode="singleTop" />
+
+        <activity
             android:name=".Activity.CommandeEncaissementActivity"
             android:label="CommandeEncaissementActivity"
             android:launchMode="singleTop" />
@@ -308,12 +333,12 @@
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".Activity.ViewLivraisonActivity"
+            android:name=".mob_cmd_al.mob_livraison_panier.ViewLivraisonActivity"
             android:label="ViewLivraisonActivity"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".Activity.NewLivraisonPanierActivity"
+            android:name=".mob_cmd_al.mob_livraison_panier.NewLivraisonPanierActivity"
             android:label="NewLivraisonPanierActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan"/>

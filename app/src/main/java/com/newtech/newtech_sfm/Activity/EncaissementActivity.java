@@ -52,6 +52,7 @@ import com.newtech.newtech_sfm.Metier_Manager.UserManager;
 import com.newtech.newtech_sfm.Metier_Manager.VisiteManager;
 import com.newtech.newtech_sfm.R;
 import com.newtech.newtech_sfm.Service.BlutoothConnctionService;
+import com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier.ViewLivraisonActivity;
 
 import org.json.JSONException;
 

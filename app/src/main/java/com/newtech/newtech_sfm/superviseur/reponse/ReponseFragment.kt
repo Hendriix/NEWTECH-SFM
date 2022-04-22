@@ -1,16 +1,16 @@
 package com.newtech.newtech_sfm.superviseur.reponse
 
-import android.graphics.Color
+import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.*
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import androidx.core.view.marginTop
 import androidx.core.view.size
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,7 +18,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import com.newtech.newtech_sfm.Activity.ClientActivity
 import com.newtech.newtech_sfm.Metier.QuestionReponse
 import com.newtech.newtech_sfm.Metier.Reponse
 import com.newtech.newtech_sfm.R
@@ -26,18 +26,18 @@ import com.newtech.newtech_sfm.databinding.FragmentReponseBinding
 import com.newtech.newtech_sfm.superviseur.QuestionnaireViewModel
 
 
-class ReponseFragment : ReponseFragmentView, Fragment() {
+class ReponseFragment : Fragment() {
 
     private lateinit var binding: FragmentReponseBinding
     private val questionnaireViewModel: QuestionnaireViewModel by activityViewModels()
-    private val reponseList: ArrayList<Reponse> = ArrayList()
     private lateinit var linearLayout: LinearLayout
+    private var isFormValid: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate<FragmentReponseBinding>(
             inflater,
             R.layout.fragment_reponse, container, false
@@ -49,14 +49,25 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val bundle = this.arguments
+
+        val questionnaireCode = bundle!!.getString("QUESTIONNAIRE_CODE")
+
+        questionnaireViewModel.setQuestionnaireCode(questionnaireCode!!)
+
         Log.d(
             "ReponseFragment",
             "onViewCreated client code: " + questionnaireViewModel.getClientCode()
         )
 
-        questionnaireViewModel.getQuestionnaireQR()
-            .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+        binding.determinateBar.visibility = View.VISIBLE
+        binding.controlBtnLl.visibility = View.GONE
 
+        questionnaireViewModel.getQuestionnaireQR()
+            .observe(viewLifecycleOwner) {
+
+                binding.determinateBar.visibility = View.GONE
+                binding.controlBtnLl.visibility = View.VISIBLE
 
                 val questionReponseList: ArrayList<QuestionReponse>? = it.TB_QUESTION_REPONSES
 
@@ -65,20 +76,20 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
 
                 if (questionReponseList!!.size > 0) {
 
-                    for (i in 0..questionReponseList!!.size - 1) run {
+                    for (i in 0..questionReponseList.size - 1) run {
 
                         val questionReponse: QuestionReponse = questionReponseList[i]
 
 
-                        createLinearLayout(view, questionReponse)
+                        createLinearLayout(questionReponse)
 
                         /*TEXT VIEW*/
-                        createTextView(view, questionReponse)
+                        createTextView(questionReponse)
 
                         if (questionReponse.TB_REPONSES!!.size > 0) {
 
                             /*RADIO GROUP*/
-                            var radioGroup = createRadioGroup(view, questionReponse)
+                            val radioGroup = createRadioGroup(view, questionReponse)
 
                             val reponseList: ArrayList<Reponse>? = questionReponse.TB_REPONSES
 
@@ -116,7 +127,7 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
                                         "onViewCreated: " + reponse.toString()
                                     )
 
-                                    createTextInputField(view, questionReponse)
+                                    createTextInputField(questionReponse)
 
                                 } else {
 
@@ -140,27 +151,29 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
 
                     }
                 }
-            })
+            }
 
         binding.validerVrBtn.setOnClickListener {
 
             /*CHECK WHETHER FORM IS VALID OR NOT*/
-            /*
-            questionnaireViewModel.validateForm(requireView())
-            Log.d(
-                "ReponseFragment",
-                "onViewCreated: resultat list : " + questionnaireViewModel.resultatList.toString()
-            )*/
 
-            val navController: NavController = this.findNavController()
+            isFormValid = questionnaireViewModel.validateForm(requireView())
+            val dialogTextMessage = getString(R.string.validate_message)
 
-            navController.navigate(R.id.action_reponseFragment_to_reponseRecapFragment)
+            if (isFormValid) {
+                showNoticeDialog(dialogTextMessage)
+            }
+
         }
 
+        binding.annulerVrBtn.setOnClickListener {
+            val dialogtextMessage = getString(R.string.cancel_message)
+            showNoticeDialog(dialogtextMessage)
+        }
 
     }
 
-    fun createLinearLayout(view: View, questionReponse: QuestionReponse) {
+    fun createLinearLayout(questionReponse: QuestionReponse) {
 
         linearLayout = LinearLayout(requireContext())
         val layoutparams = LinearLayout.LayoutParams(
@@ -179,7 +192,7 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
 
     }
 
-    fun createTextView(view: View, questionReponse: QuestionReponse) {
+    fun createTextView(questionReponse: QuestionReponse) {
 
         val linearLayout =
             binding.qrLl.findViewWithTag<LinearLayout>(questionReponse.QUESTIONNAIRE_CODE + questionReponse.QUESTION_CODE)
@@ -193,7 +206,7 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
         val textView = TextView(context)
         //textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17F)
         textView.textSize = 17F
-        textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.Black));
+        textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.Black))
         textView.text = questionReponse.QUESTION_NOM
         textView.tag = questionReponse.QUESTION_CODE
         textView.setPadding(20, 10, 20, 10)
@@ -207,13 +220,13 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
 
     }
 
-    fun createTextInputField(view: View, questionReponse: QuestionReponse) {
+    fun createTextInputField(questionReponse: QuestionReponse) {
 
         val linearLayout =
             binding.qrLl.findViewWithTag<LinearLayout>(questionReponse.QUESTIONNAIRE_CODE + questionReponse.QUESTION_CODE)
 
-        val textInputLayout = context?.let { TextInputLayout(it) }
-        val textInputEditText = TextInputEditText(textInputLayout!!.context)
+        val textInputLayout = context?.let { TextInputEditText(it) }
+        //val textInputEditText = TextInputEditText(textInputLayout!!.context)
 
         val params: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(
@@ -226,7 +239,7 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
         //textInputLayout!!.layoutParams = view.layoutParams
         textInputLayout.tag = questionReponse.QUESTION_CODE
         textInputLayout.setPadding(20, 10, 20, 10)
-
+        textInputLayout.imeOptions = EditorInfo.IME_ACTION_NEXT
 
         textInputLayout.onFocusChangeListener =
             OnFocusChangeListener { v, hasFocus ->
@@ -235,7 +248,7 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
 
                     questionnaireViewModel.addResultEditText(
                         questionReponse,
-                        textInputEditText.text.toString()
+                        textInputLayout.text.toString()
                     )
 
                 }
@@ -246,7 +259,7 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
             }
 
 
-        linearLayout.addView(textInputEditText)
+        linearLayout.addView(textInputLayout)
         binding.qrLl.removeView(linearLayout)
         binding.qrLl.addView(linearLayout)
 
@@ -332,6 +345,34 @@ class ReponseFragment : ReponseFragmentView, Fragment() {
         binding.qrLl.addView(linearLayout)
     }
 
+    fun showNoticeDialog(dialogTextMessage: String) {
+
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.custom_confirm_dialog)
+
+        val confirmButton: Button = dialog.findViewById(R.id.btn_oui)
+        val cancelButton: Button = dialog.findViewById(R.id.btn_non)
+        val dialogText: TextView = dialog.findViewById(R.id.alertencaissement)
+        val navController: NavController = this.findNavController()
+
+        dialogText.text = dialogTextMessage
+
+        confirmButton.setOnClickListener {
+            dialog.dismiss()
+            if (isFormValid) {
+                navController.navigate(R.id.action_reponseFragment_to_reponseRecapFragment)
+            } else {
+                val intent = Intent(this.activity, ClientActivity::class.java)
+                startActivity(intent)
+                this.requireActivity().finish()
+            }
+        }
+
+        cancelButton.setOnClickListener { dialog.dismiss() }
+
+        dialog.show()
+
+    }
 
 }
 

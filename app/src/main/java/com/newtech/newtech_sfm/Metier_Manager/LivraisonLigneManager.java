@@ -165,7 +165,7 @@ public class LivraisonLigneManager extends SQLiteOpenHelper {
 
                 for(int j=0;j<livraisonLignes.size();j++){
 
-                    Log.d(TAG, "getListALivrer: livraisonlignes"+livraisonLignes.toString());
+                    Log.d(TAG, "getListALivrer: livraisonlignes"+ livraisonLignes);
                     if(livraisonLignes.get(j).getARTICLE_CODE().equals(ARTICLE_CODE) && livraisonLignes.get(j).getUNITE_CODE().equals(UNITE_CODE)){
                         Log.d(TAG, "getListALivrer livl: "+livraisonLignes.get(j).getARTICLE_CODE());
                         Log.d(TAG, "getListALivrer livl: "+livraisonLignes.get(j).getUNITE_CODE());
@@ -175,12 +175,12 @@ public class LivraisonLigneManager extends SQLiteOpenHelper {
 
                if(livraisonLigneTemp.size()>0){
                    Log.d(TAG, "getListALivrer livTemp >: "+livraisonLigneTemp.size());
-                   Log.d(TAG, "getListALivrer livTemp >: "+livraisonLigneTemp.toString());
+                   Log.d(TAG, "getListALivrer livTemp >: "+ livraisonLigneTemp);
                    livraisonLigne = getLivraisonLigneALivrer(commandeLignes.get(i),livraisonLigneTemp,livraison_code,context);
 
                }else{
                    Log.d(TAG, "getListALivrer livTemp <: "+livraisonLigneTemp.size());
-                   Log.d(TAG, "getListALivrer livTemp <: "+livraisonLigneTemp.toString());
+                   Log.d(TAG, "getListALivrer livTemp <: "+ livraisonLigneTemp);
                    livraisonLigne = new LivraisonLigne(commandeLignes.get(i),livraison_code,context);
                }
 
@@ -206,6 +206,31 @@ public class LivraisonLigneManager extends SQLiteOpenHelper {
 
         return livraisonLigneFinal;
     }
+
+    public ArrayList<LivraisonLigne> getListAL(ArrayList<CommandeLigne> commandeLignes,String livraison_code, Context context){
+
+        ArrayList<LivraisonLigne> livraisonLigneTemp= new ArrayList<>();
+        ArrayList<LivraisonLigne> livraisonLigneFinal= new ArrayList<>();
+        LivraisonLigne livraisonLigne;
+
+        for(int i=0; i<commandeLignes.size();i++){
+
+                livraisonLigne = getLivraisonLigneAL(commandeLignes.get(i),livraison_code,context);
+
+                if(livraisonLigne != null){
+                    livraisonLigneFinal.add(livraisonLigne);
+                }
+
+            livraisonLigneTemp.clear();
+        }
+
+        for(int i=0;i<livraisonLigneFinal.size();i++){
+            livraisonLigneFinal.get(i).setLIVRAISONLIGNE_CODE(i+1);
+        }
+
+        return livraisonLigneFinal;
+    }
+
 
     public LivraisonLigne getLivraisonLigneALivrer(CommandeLigne commandeLigne, ArrayList<LivraisonLigne> livraisonLignes, String livraison_code, Context context){
         LivraisonLigne livraisonLigne = new LivraisonLigne();
@@ -298,6 +323,16 @@ public class LivraisonLigneManager extends SQLiteOpenHelper {
 
             livraisonLigne = new LivraisonLigne(commandeLigne,livraison_code,context);
 
+        }
+
+        return livraisonLigne;
+    }
+
+    public LivraisonLigne getLivraisonLigneAL(CommandeLigne commandeLigne, String livraison_code, Context context){
+        LivraisonLigne livraisonLigne = null;
+
+        if((commandeLigne.getQTE_COMMANDEE() - commandeLigne.getQTE_LIVREE()) != 0){
+            livraisonLigne = new LivraisonLigne(commandeLigne,livraison_code,context);
         }
 
         return livraisonLigne;
@@ -883,8 +918,5 @@ public class LivraisonLigneManager extends SQLiteOpenHelper {
 
         return livraisonLigneArrayList;
     }
-
-
-
 
 }

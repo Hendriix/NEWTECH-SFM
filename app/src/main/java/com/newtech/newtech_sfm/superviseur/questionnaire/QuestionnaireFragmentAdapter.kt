@@ -2,6 +2,7 @@ package com.newtech.newtech_sfm.superviseur.questionnaire
 
 import android.app.Dialog
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.newtech.newtech_sfm.Metier.Questionnaire
 import com.newtech.newtech_sfm.R
 
-class QuestionnaireFragmentAdapter (
+class QuestionnaireFragmentAdapter(
     private val navController: NavController,
     private val dataSet: List<Questionnaire>,
     private val context: Context?
@@ -51,16 +52,17 @@ class QuestionnaireFragmentAdapter (
         viewHolder.nom_questionnaire.text = questionnaire.QUESTIONNAIRE_NOM
         viewHolder.description_questionnaire.text = questionnaire.DESCRIPTION
 
+        viewHolder.mView?.setOnClickListener {
 
-        viewHolder.mView?.setOnClickListener{
-
-            navController.navigate(R.id.action_questionnaireFragment_to_reponseFragment)
+            val bundle = Bundle()
+            bundle.putString("QUESTIONNAIRE_CODE", questionnaire.QUESTIONNAIRE_CODE)
+            navController.navigate(R.id.action_questionnaireFragment_to_reponseFragment, bundle)
 
         }
 
     }
 
-    override fun getItemCount() : Int {
+    override fun getItemCount(): Int {
         return dataSet.size
     }
 

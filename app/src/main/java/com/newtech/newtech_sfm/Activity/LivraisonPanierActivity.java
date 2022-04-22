@@ -39,6 +39,7 @@ import com.newtech.newtech_sfm.Metier_Manager.ArticlePrixManager;
 import com.newtech.newtech_sfm.Metier_Manager.FamilleManager;
 import com.newtech.newtech_sfm.Metier_Manager.UniteManager;
 import com.newtech.newtech_sfm.R;
+import com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier.ViewLivraisonActivity;
 
 import org.json.JSONObject;
 
@@ -469,7 +470,7 @@ public class LivraisonPanierActivity extends AppCompatActivity implements Search
 
         int size= livraisonLignes.size()+1;
 
-        LivraisonLigne livraisonLigne = new LivraisonLigne(livraison,article,dateLivraison,quantite,unite,prixArticle,size,getApplicationContext());
+        LivraisonLigne livraisonLigne = new LivraisonLigne(livraison,article,dateLivraison,(int)quantite,unite,prixArticle,size,getApplicationContext());
         livraisonLignes.add(livraisonLigne);
     }
 

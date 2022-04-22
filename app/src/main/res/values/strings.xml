@@ -94,6 +94,46 @@
     <string name="savola">savola</string>
     <string name="acompagnement">Acompagnement</string>
     <string name="description">Description</string>
+    <string name="validate_message">Voulez vous vraiment valider ?</string>
+    <string name="cancel_message">Voulez vous vraiment annuler ?</string>
+    <string name="x">X</string>
+    <string name="saylani_chouaib">SAYLANI CHOUAIB</string>
+    <string name="rue_abou_firas_el_hamadani_hay_elwahda_berrechid">RUE ABOU FIRAS EL HAMADANI HAY ELWAHDA BERRECHID</string>
+    <string name="appeler">APPELER</string>
+    <string name="trajet">TRAJET</string>
+    <string name="visiter">VISITER</string>
+    <string name="follow_me">Follow Me</string>
+
+    <!-- Variables d'affichage des mob commandes -->
+
+    <string name="client_nom">Client: %s</string>
+    <string name="vendeur_nom">Vendeur: %s</string>
+    <string name="numero_commande">N°: %s</string>
+    <string name="date_commande">Date: %s</string>
+    <string name="montant_net">Montant: %s</string>
+    <string name="montant_reste">Reste: %s</string>
+    <string name="tonnage_net">Tonnage: %s</string>
+    <string name="tonnage_reste">Reste: %s</string>
+
+    <!-- Variables d'affichage des mob commande lignes -->
+
+
+    <string name="article_nom">Article: %s</string>
+    <string name="article_code">Code: %s</string>
+    <string name="article_unite">Unité: %s</string>
+    <string name="article_prix">Prix: %s</string>
+    <string name="qte_commandee">Commandée: %s</string>
+    <string name="qte_livree">Livrée: %s</string>
+    <string name="qte_reste">Reste: %s</string>
+    <string name="valeur_cmd_ligne">Valeur: %s</string>
+    <string name="modifier">modifier</string>
+    <string name="encaisser">encaisser</string>
+
+    <!-- Variables d'affichage des encaissements -->
+
+    <string name="encaissement_type">Type: %s MAD</string>
+    <string name="encaissement_montant">Montant: %f MAD</string>
+    <string name="ajouter_encaissement">Ajouter Encaissement</string>
 
 
 </resources>

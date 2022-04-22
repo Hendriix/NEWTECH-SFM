@@ -100,9 +100,9 @@ public class Visite {
         this.DATE_VISITE = date;
         this.GPS_LATITUDE = String.valueOf(latitude);
         this.GPS_LONGITUDE = String.valueOf(longitude);
-        this.TYPE_CODE = "DEFAULT";
+        this.TYPE_CODE = "TP0088";
         this.STATUT_CODE = "to_insert";
-        this.CATEGORIE_CODE = "DEFAULT";
+        this.CATEGORIE_CODE = "CA0103";
         this.TACHE_CODE = tache_code;
         this.CREATEUR_CODE = utilisateur_code;
         this.DATE_CREATION = date_visite;

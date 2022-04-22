@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newtech.newtech_sfm.mob_cmd_al.mob_commande_ligne.MobCmdLALFragment"
+    tools:layout="@layout/fragment_mob_cmd_ligne">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/determinateBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progress="25"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mob_cmd_ligne_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_validation_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager" />
+
+
+        <LinearLayout
+            android:id="@+id/btn_validation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+
+            <Button
+                android:id="@+id/livrer_btn"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_shape"
+                android:text="LIVRER"
+                android:textColor="@color/blanc"
+                android:textStyle="bold"
+
+                />
+
+            <Button
+                android:id="@+id/annuler_btn"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_shape"
+                android:text="annuler"
+                android:textColor="@color/blanc"
+                android:textStyle="bold"
+
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</layout>

@@ -104,6 +104,7 @@ public class VisiteActivity extends AppCompatActivity implements SearchView.OnQu
     public static String affectation_type="";
     public static String affectation_valeur="";
     public static ImageView expanded_image;
+    private float accuracy = 0;
 
     // END STATIC FIELDS /////////////////////////////////////////////////////////////
 
@@ -317,20 +318,25 @@ public class VisiteActivity extends AppCompatActivity implements SearchView.OnQu
 
         scan_btn.setOnClickListener(v -> {
 
-            if (ContextCompat.checkSelfPermission(VisiteActivity.this,
-                    Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            if(checkAccuracy()){
+                if (ContextCompat.checkSelfPermission(VisiteActivity.this,
+                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
 
-                IntentIntegrator integrator = new IntentIntegrator(VisiteActivity.this);
+                    IntentIntegrator integrator = new IntentIntegrator(VisiteActivity.this);
 
-                integrator.setPrompt("Approchez le téléphone du QR code");
+                    integrator.setPrompt("Approchez le téléphone du QR code");
 
-                integrator.setOrientationLocked(false);
+                    integrator.setOrientationLocked(false);
 
-                integrator.initiateScan();
+                    integrator.initiateScan();
 
-            } else {
-                requestCameraPermission();
+                } else {
+                    requestCameraPermission();
+                }
+            }else{
+                showText("Merci de garder une précision inférieur ou égale à : "+distance_gps);
             }
+
 
         });
 
@@ -502,7 +508,7 @@ public class VisiteActivity extends AppCompatActivity implements SearchView.OnQu
         LinearLayout trajet_ll;
         LinearLayout visiter_ll;
 
-        tvclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        tvclose =(TextView) myDialog.findViewById(R.id.close_tv);
         tvClientNom =(TextView) myDialog.findViewById(R.id.client_nom_tv);
         tvClientAdresse =(TextView) myDialog.findViewById(R.id.client_adresse_tv);
 
@@ -812,7 +818,7 @@ public class VisiteActivity extends AppCompatActivity implements SearchView.OnQu
             //accuracyET.setText(String.format("%f",mCurrentLocation.getAccuracy()));
             latitude = mCurrentLocation.getLatitude();
             longitude = mCurrentLocation.getLongitude();
-            float accuracy = mCurrentLocation.getAccuracy();
+            accuracy = mCurrentLocation.getAccuracy();
 
             Log.d(TAG, "updateLocationUI: latitude "+latitude);
             Log.d(TAG, "updateLocationUI: longitude "+longitude);
@@ -1227,14 +1233,20 @@ public class VisiteActivity extends AppCompatActivity implements SearchView.OnQu
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Client client =(Client)mBaseAdapter.getItem(position);
-                ClientActivity.visiteCourante=null;
-                ClientActivity.clientCourant=client_manager.get(client.getCLIENT_CODE());
-                ClientActivity.commande_source= commande_source;
-                ClientActivity.gps_latitude = latitude;
-                ClientActivity.gps_longitude = longitude;
-                ClientActivity.visite_source = "CLIC";
-                ShowPopup(client);
+                if(checkAccuracy()){
+                    Client client =(Client)mBaseAdapter.getItem(position);
+                    ClientActivity.visiteCourante=null;
+                    ClientActivity.clientCourant=client_manager.get(client.getCLIENT_CODE());
+                    ClientActivity.commande_source= commande_source;
+                    ClientActivity.gps_latitude = latitude;
+                    ClientActivity.gps_longitude = longitude;
+                    ClientActivity.visite_source = "CLIC";
+                    ShowPopup(client);
+                }else{
+                    showText("Merci de garder une précision inférieur ou égale à : "+distance_gps);
+                }
+
+
 
             }
         });
@@ -1265,5 +1277,13 @@ public class VisiteActivity extends AppCompatActivity implements SearchView.OnQu
         if(progressionStatut ==100){
             mProgressBar.setProgress((int) progressionStatut);
         }
+    }
+
+    private boolean checkAccuracy(){
+         boolean isChecked = false;
+         if(accuracy<=distance_gps){
+             isChecked = true;
+         }
+         return isChecked;
     }
 }

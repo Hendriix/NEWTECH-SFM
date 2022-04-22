@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_cmd_nc_al.xml"
+    app:startDestination="@id/mobCmdALFragment">
+
+    <fragment
+        android:id="@+id/mobCmdALFragment"
+        android:name="com.newtech.newtech_sfm.mob_cmd_al.mob_commandes.MobCmdALFragment"
+        android:label="COMMANDE A LIVRER"
+        tools:layout="@layout/fragment_mob_cmd">
+        <action
+            android:id="@+id/action_mobCmdALFragment_to_mobCmdLALFragment"
+            app:destination="@id/mobCmdLALFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobCmdLALFragment"
+        android:name="com.newtech.newtech_sfm.mob_cmd_al.mob_commande_ligne.MobCmdLALFragment"
+        android:label="COMMANDE LIGNES"
+        tools:layout="@layout/fragment_mob_cmd_ligne" >
+        <action
+            android:id="@+id/action_mobCmdLALFragment_to_mobViewLivraisonFragment"
+            app:destination="@id/mobViewLivraisonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobViewLivraisonFragment"
+        android:name="com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier.MobViewLivraisonFragment"
+        android:label="PANIER LIVRAISON"
+        tools:layout="@layout/fragment_view_livraison" >
+        <action
+            android:id="@+id/action_mobViewLivraisonFragment_to_mobPanierLivraisonFragment"
+            app:destination="@id/mobPanierLivraisonFragment" />
+        <action
+            android:id="@+id/action_mobViewLivraisonFragment_to_mobEncaissementFragment"
+            app:destination="@id/mobEncaissementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobPanierLivraisonFragment"
+        android:name="com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier.MobPanierLivraisonFragment"
+        android:label="LISTE D'ARTICLES"
+        tools:layout="@layout/fragment_panier_livraison" >
+        <action
+            android:id="@+id/action_mobPanierLivraisonFragment_to_mobViewLivraisonFragment"
+            app:destination="@id/mobViewLivraisonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobEncaissementFragment"
+        android:name="com.newtech.newtech_sfm.mob_cmd_al.mob_encaissement.MobEncaissementFragment"
+        android:label="ENCAISSEMENT"
+        tools:layout="@layout/fragment_mob_encaissement" >
+        <action
+            android:id="@+id/action_mobEncaissementFragment_to_mobEncaissementTypeFragment"
+            app:destination="@id/mobEncaissementTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobEncaissementTypeFragment"
+        android:name="com.newtech.newtech_sfm.mob_cmd_al.mob_encaissement.MobEncaissementTypeFragment"
+        android:label="ENCAISSEMENT TYPES"
+        tools:layout="@layout/fragment_mob_encaissement_type">
+    </fragment>
+
+</navigation>

@@ -5,9 +5,19 @@
     tools:context="com.newtech.newtech_sfm.superviseur.questionnaire.QuestionnaireFragment"
     tools:layout="@layout/fragment_questionnaire">
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/determinateBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:progress="25"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/questionnaire_recycler_view"
@@ -22,8 +32,6 @@
 
 
     </RelativeLayout>
-
-
 
 
 

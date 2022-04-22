@@ -74,9 +74,9 @@ public class Visibilite {
             e.printStackTrace();
         }
         this.CIRCUIT_CODE = client.getCIRCUIT_CODE();
-        this.TYPE_CODE = "DEFAULT";
-        this.STATUT_CODE = "DEFAULT";
-        this.CATEGORIE_CODE = "DEFAULT";
+        this.TYPE_CODE = "TP0041";
+        this.STATUT_CODE = "56";
+        this.CATEGORIE_CODE = "CA0077";
         this.DATE_CREATION = df.format(Calendar.getInstance().getTime());
         try {
             this.CREATEUR_CODE = user.getString("UTILISATEUR_CODE");

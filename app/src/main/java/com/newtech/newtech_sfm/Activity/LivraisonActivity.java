@@ -65,7 +65,7 @@ import java.util.Locale;
 /**
  * Created by stagiaireit2 on 26/07/2016.
  */
-public class LivraisonActivity extends AppCompatActivity implements SearchView.OnQueryTextListener,GoogleApiClient.ConnectionCallbacks,
+public class LivraisonActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener,
         ResultCallback<LocationSettingsResult> {
@@ -73,13 +73,13 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
 
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 3;
     private static final String TAG = LivraisonActivity.class.getName();
-    public static Client clientCourant=new Client();
-    public static String activity_source="";
-    public static String tache_code="";
+    public static Client clientCourant = new Client();
+    public static String activity_source = "";
+    public static String tache_code = "";
     SearchView mSearchView;
     Livraison_Adapter livraison_adapter;
     List<Client> client_list = new ArrayList<Client>();
-    List<Client> clientsWithoutVisits= new ArrayList<Client>();
+    List<Client> clientsWithoutVisits = new ArrayList<Client>();
     List<Client> clientProches = new ArrayList<>();
     RecyclerView rv;
     ListView mListView1;
@@ -95,16 +95,16 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
     private int ClientRestants;
 
 
-    ClientManager client_manager ;
+    ClientManager client_manager;
 
     private static Double latitude;
     private static Double longitude;
     private static float accuracy;
 
 
-    public String tournee_code="";
+    public String tournee_code = "";
 
-    public String client_code="";
+    public String client_code = "";
 
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
     public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
@@ -117,7 +117,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
     protected Boolean mRequestingLocationUpdates;
     protected String mLastUpdateTime;
 
-    int RQS_GooglePlayServices=0;
+    int RQS_GooglePlayServices = 0;
 
     ParametreManager parametreManager;
     int distance_gps = 20;
@@ -139,90 +139,90 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         searchmanager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        mSearchView=(SearchView) findViewById(visite_search_client);
+        mSearchView = (SearchView) findViewById(visite_search_client);
         mProgressBar = (ProgressBar) findViewById(R.id.va_progressBar1);
-        vaCheckBox1=(CheckBox) findViewById(R.id.va_checkBox1);
+        vaCheckBox1 = (CheckBox) findViewById(R.id.va_checkBox1);
 
 
         parametreManager = new ParametreManager(this);
         Parametre parametre = parametreManager.get("DISTANCEGPS");
 
-        if(parametre.getVALEUR()== null || parametre.getVALEUR().length() == 0){
-            distance_gps =20;
-        }else{
-            distance_gps =Integer.parseInt(parametre.getVALEUR());
+        if (parametre.getVALEUR() == null || parametre.getVALEUR().length() == 0) {
+            distance_gps = 20;
+        } else {
+            distance_gps = Integer.parseInt(parametre.getVALEUR());
         }
 
 
         Intent myintent = getIntent();
         Bundle extras = myintent.getExtras();
-            if (extras != null){
-                if(extras.containsKey("TOURNEE_CODE")){
-                    tournee_code=extras.getString("TOURNEE_CODE");
-                }
-
+        if (extras != null) {
+            if (extras.containsKey("TOURNEE_CODE")) {
+                tournee_code = extras.getString("TOURNEE_CODE");
             }
+
+        }
 
 
         final ClientManager client_manager = new ClientManager(getApplicationContext());
-        if(tournee_code.equals("tous")){
-            client_list=client_manager.getList();
-        }else{
-            client_list=client_manager.getListByTourneCode(tournee_code);
+        if (tournee_code.equals("tous")) {
+            client_list = client_manager.getList();
+        } else {
+            client_list = client_manager.getListByTourneCode(tournee_code);
         }
 
-        NombreClient=client_manager.GetClientNombreByTourneeCode(tournee_code);
+        NombreClient = client_manager.GetClientNombreByTourneeCode(tournee_code);
 
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String DateVisiteAS = sdf.format(new Date());
 
-        clientsWithoutVisits=client_manager.getListWithVisite(tournee_code,DateVisiteAS);
+        clientsWithoutVisits = client_manager.getListWithVisite(tournee_code, DateVisiteAS);
 
-        VisiteManager visite_manager=new VisiteManager(getApplicationContext());
-        NombreVisiteClient=visite_manager.GetVisiteNombreByTourneeDate(tournee_code,DateVisiteAS);
+        VisiteManager visite_manager = new VisiteManager(getApplicationContext());
+        NombreVisiteClient = visite_manager.GetVisiteNombreByTourneeDate(tournee_code, DateVisiteAS);
 
-        vaTextView1=(TextView) findViewById(R.id.va_textView1);
-        vaTextView1.setText((int)NombreVisiteClient+"/"+(int)NombreClient+" CLIENTS VISITES");
+        vaTextView1 = (TextView) findViewById(R.id.va_textView1);
+        vaTextView1.setText((int) NombreVisiteClient + "/" + (int) NombreClient + " CLIENTS VISITES");
 
-        mProgressBar=(ProgressBar) findViewById(R.id.va_progressBar1);
-        ProgressionStatut=(NombreVisiteClient/NombreClient)*100;
+        mProgressBar = (ProgressBar) findViewById(R.id.va_progressBar1);
+        ProgressionStatut = (NombreVisiteClient / NombreClient) * 100;
 
-        ClientRestants =(int)(NombreClient-NombreVisiteClient);
+        ClientRestants = (int) (NombreClient - NombreVisiteClient);
 
-        if(NombreVisiteClient>0 && ProgressionStatut<100){
+        if (NombreVisiteClient > 0 && ProgressionStatut < 100) {
 
-            mProgressBar.setProgress((int)ProgressionStatut);
+            mProgressBar.setProgress((int) ProgressionStatut);
 
-            Toast.makeText(LivraisonActivity.this,"IL VOUS RESTE ENCORE "+String.valueOf(ClientRestants)+" CLIENTS",
+            Toast.makeText(LivraisonActivity.this, "IL VOUS RESTE ENCORE " + String.valueOf(ClientRestants) + " CLIENTS",
                     Toast.LENGTH_LONG).show();
         }
 
-        if(ProgressionStatut==100){
+        if (ProgressionStatut == 100) {
 
-            mProgressBar.setProgress((int)ProgressionStatut);
+            mProgressBar.setProgress((int) ProgressionStatut);
 
-            Toast.makeText(LivraisonActivity.this,"VOUS AVEZ FINI VOS VISITES DES CLIENTS",
+            Toast.makeText(LivraisonActivity.this, "VOUS AVEZ FINI VOS VISITES DES CLIENTS",
                     Toast.LENGTH_LONG).show();
 
 
         }
 
-        mListView1=(ListView) findViewById(R.id.visite_listview1);
+        mListView1 = (ListView) findViewById(R.id.visite_listview1);
 
-        livraison_adapter=new Livraison_Adapter(this,client_list);
+        livraison_adapter = new Livraison_Adapter(this, client_list);
         mListView1.setAdapter(livraison_adapter);
         mListView1.setTextFilterEnabled(true);
         setupSearchView();
 
-        mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Client client =(Client)livraison_adapter.getItem(position);
-                ClientActivity.visiteCourante=null;
-                ClientActivity.clientCourant=client_manager.get(client.getCLIENT_CODE());
-                ClientActivity.activity_source= "LivraisonActivity";
-                Intent intent=new Intent(getApplicationContext(),ClientActivity.class);
+                Client client = (Client) livraison_adapter.getItem(position);
+                ClientActivity.visiteCourante = null;
+                ClientActivity.clientCourant = client_manager.get(client.getCLIENT_CODE());
+                ClientActivity.activity_source = "LivraisonActivity";
+                Intent intent = new Intent(getApplicationContext(), ClientActivity.class);
                 //intent.putExtra("TACHE_CODE",tache_code);
                 startActivity(intent);
                 finish();
@@ -252,6 +252,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         setTitle("CLIENTS A LIVRER");
 
     }
+
     private void setupSearchView() {
         mSearchView.setIconifiedByDefault(false);
         mSearchView.setOnQueryTextListener(this);
@@ -262,7 +263,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
 
     public boolean onQueryTextChange(String newText) {
 
-        String textfilter=mSearchView.getQuery().toString().toLowerCase(Locale.getDefault());
+        String textfilter = mSearchView.getQuery().toString().toLowerCase(Locale.getDefault());
         livraison_adapter.filter(textfilter);
         //Toast.makeText(this,textfilter, Toast.LENGTH_LONG).show();
         return true;
@@ -273,28 +274,28 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         boolean checked = ((CheckBox) view).isChecked();
         int variable;
         // Check which checkbox was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.va_checkBox1:
-                if (checked){
-                    variable=1;
-                    livraison_adapter.filterClientRestant(variable,clientsWithoutVisits );
+                if (checked) {
+                    variable = 1;
+                    livraison_adapter.filterClientRestant(variable, clientsWithoutVisits);
 
-                }else{
-                    variable=0;
-                    livraison_adapter.filterClientRestant(variable,clientsWithoutVisits );
+                } else {
+                    variable = 0;
+                    livraison_adapter.filterClientRestant(variable, clientsWithoutVisits);
                 }
                 // Remove the meat
                 break;
             case R.id.va_checkBox2:
-                if (checked){
-                    clientProches = client_manager.getClientProches(client_list,latitude,longitude,this);
-                    variable=1;
-                    livraison_adapter.filterClientRestant(variable,clientProches );
+                if (checked) {
+                    clientProches = client_manager.getClientProches(client_list, latitude, longitude, this);
+                    variable = 1;
+                    livraison_adapter.filterClientRestant(variable, clientProches);
 
-                }else{
-                    clientProches = client_manager.getClientProches(client_list,latitude,longitude,this);
-                    variable=0;
-                    livraison_adapter.filterClientRestant(variable,clientProches );
+                } else {
+                    clientProches = client_manager.getClientProches(client_list, latitude, longitude, this);
+                    variable = 0;
+                    livraison_adapter.filterClientRestant(variable, clientProches);
                 }
 
         }
@@ -317,7 +318,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
                 this.onBackPressed();
                 return true;
             case R.id.add_client:
-                Intent intent=new Intent(this,Client_Manager.class);
+                Intent intent = new Intent(this, Client_Manager.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -349,18 +350,18 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        tache_code="";
-        if(tournee_code.equals("tous")){
+        tache_code = "";
+        if (tournee_code.equals("tous")) {
             Intent i = new Intent(this, MenuActivity.class);
             startActivity(i);
-            finish();}
-        else if(activity_source=="CatalogueTacheActivity"){
+            finish();
+        } else if (activity_source == "CatalogueTacheActivity") {
             //Intent i = new Intent(this, CatalogueTourneeActivity.class);
 
             Intent i = new Intent(this, CatalogueTacheActivity.class);
             startActivity(i);
             finish();
-        }else{
+        } else {
 
             Intent i = new Intent(this, CatalogueTourneeActivity.class);
             //Intent i = new Intent(this, CatalogueTacheActivity.class);
@@ -382,17 +383,17 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         LinearLayout trajet_ll;
         LinearLayout visiter_ll;
 
-        tvclose =(TextView) myDialog.findViewById(R.id.txtclose);
-        tvClientNom =(TextView) myDialog.findViewById(R.id.client_nom_tv);
-        tvClientAdresse =(TextView) myDialog.findViewById(R.id.client_adresse_tv);
+        tvclose = (TextView) myDialog.findViewById(R.id.close_tv);
+        tvClientNom = (TextView) myDialog.findViewById(R.id.client_nom_tv);
+        tvClientAdresse = (TextView) myDialog.findViewById(R.id.client_adresse_tv);
 
         appeler_ll = (LinearLayout) myDialog.findViewById(R.id.appeler_ll);
-        trajet_ll = (LinearLayout)  myDialog.findViewById(R.id.trajet_ll);
-        visiter_ll = (LinearLayout)  myDialog.findViewById(R.id.visiter_ll);
+        trajet_ll = (LinearLayout) myDialog.findViewById(R.id.trajet_ll);
+        visiter_ll = (LinearLayout) myDialog.findViewById(R.id.visiter_ll);
 
 
         tvClientNom.setText(client.getCLIENT_NOM().toUpperCase());
-        tvClientAdresse.setText(client.getADRESSE_NR()+" "+client.getADRESSE_RUE()+" "+client.getADRESSE_QUARTIER());
+        tvClientAdresse.setText(client.getADRESSE_NR() + " " + client.getADRESSE_RUE() + " " + client.getADRESSE_QUARTIER());
         //txtclose.setText("M");
         tvclose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -405,7 +406,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
-                Log.d(TAG, "onClick: "+"APPELER");
+                Log.d(TAG, "onClick: " + "APPELER");
 
                 callClient(client);
                 //Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +client.getCLIENT_TELEPHONE1()));
@@ -418,7 +419,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
-                Log.d(TAG, "onClick: "+"TRAJET");
+                Log.d(TAG, "onClick: " + "TRAJET");
                 drawPolyLine(client);
 
 
@@ -428,9 +429,9 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         visiter_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: "+"VISITER");
+                Log.d(TAG, "onClick: " + "VISITER");
                 myDialog.dismiss();
-                Intent intent=new Intent(getApplicationContext(),ClientActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ClientActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -441,7 +442,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         myDialog.show();
     }
 
-    private void callClient(Client client){
+    private void callClient(Client client) {
 
         String number = ("tel:" + client.getCLIENT_TELEPHONE1());
         Intent mIntent = new Intent(Intent.ACTION_CALL);
@@ -462,7 +463,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
             //You already have permission
             try {
                 startActivity(mIntent);
-            } catch(SecurityException e) {
+            } catch (SecurityException e) {
                 e.printStackTrace();
             }
         }
@@ -472,6 +473,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
                 // If request is cancelled, the result arrays are empty.
@@ -535,6 +537,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
 
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
+
     //step 3
     protected void buildLocationSettingsRequest() {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
@@ -602,6 +605,7 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
             }
         });
     }
+
     @Override
     public void onConnected(Bundle bundle) {
 
@@ -656,8 +660,8 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
 
     /**
      * Invoked when settings dialog is opened and action taken
-     * @param locationSettingsResult
-     *	This below OnResult will be used by settings dialog actions.
+     *
+     * @param locationSettingsResult This below OnResult will be used by settings dialog actions.
      */
 
     //step 5
@@ -716,42 +720,39 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
             longitude = mCurrentLocation.getLongitude();
             accuracy = mCurrentLocation.getAccuracy();
 
-            Log.d(TAG, "updateLocationUI: latitude "+latitude);
-            Log.d(TAG, "updateLocationUI: longitude "+longitude);
-            Log.d(TAG, "updateLocationUI: accuracy "+accuracy);
+            Log.d(TAG, "updateLocationUI: latitude " + latitude);
+            Log.d(TAG, "updateLocationUI: longitude " + longitude);
+            Log.d(TAG, "updateLocationUI: accuracy " + accuracy);
 
             vaTextView2.setText(String.valueOf(accuracy));
 
-            if(accuracy < distance_gps){
-                vaTextView2.setBackgroundColor(ContextCompat.getColor(this,R.color.good));
-            }else{
-                vaTextView2.setBackgroundColor(ContextCompat.getColor(this,R.color.bad));
+            if (accuracy < distance_gps) {
+                vaTextView2.setBackgroundColor(ContextCompat.getColor(this, R.color.good));
+            } else {
+                vaTextView2.setBackgroundColor(ContextCompat.getColor(this, R.color.bad));
             }
 
             // mLastUpdateTimeTextView.setText(String.format("%s: %s", mLastUpdateTimeLabel,mLastUpdateTime));
-            Toast.makeText(this,"Location has been changed",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Location has been changed", Toast.LENGTH_SHORT).show();
             //updateCityAndPincode(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
         }
     }
 
 
     /**
-     *	This updateCityAndPincode method uses Geocoder api to map the latitude and longitude into city location or pincode.
-     *	We can retrieve many details using this Geocoder class.
-     *
-     And yes the Geocoder will not work unless you have data connection or wifi connected to internet.
+     * This updateCityAndPincode method uses Geocoder api to map the latitude and longitude into city location or pincode.
+     * We can retrieve many details using this Geocoder class.
+     * <p>
+     * And yes the Geocoder will not work unless you have data connection or wifi connected to internet.
      */
 
     /* ########################################    GPS ######################################################*/
-
-
-
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart: ");
 
-        if(!mGoogleApiClient.isConnected()){
+        if (!mGoogleApiClient.isConnected()) {
             //step 1
             buildGoogleApiClient();
 
@@ -766,17 +767,18 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         }
 
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
-        if (resultCode == ConnectionResult.SUCCESS){
+        if (resultCode == ConnectionResult.SUCCESS) {
 
 //            Toast.makeText(getApplicationContext(),
 //                    "isGooglePlayServicesAvailable SUCCESS",Toast.LENGTH_LONG).show();
 
             mGoogleApiClient.connect();
-        }else{
+        } else {
             GooglePlayServicesUtil.getErrorDialog(resultCode, this, RQS_GooglePlayServices);
         }
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -798,22 +800,19 @@ public class LivraisonActivity extends AppCompatActivity implements SearchView.O
         mGoogleApiClient.disconnect();
     }
 
-    private void drawPolyLine(Client client){
+    private void drawPolyLine(Client client) {
 
-        double clientLatitue = Double.parseDouble(client.getGPS_LATITUDE().replace(",",".")) ;
-        double clientLongitude = Double.parseDouble(client.getGPS_LONGITUDE().replace(",","."));
+        double clientLatitue = Double.parseDouble(client.getGPS_LATITUDE().replace(",", "."));
+        double clientLongitude = Double.parseDouble(client.getGPS_LONGITUDE().replace(",", "."));
 
-        try
-        {
+        try {
             // Launch Waze to look for Hawaii:
-            String url = "https://waze.com/ul?ll="+String.valueOf(clientLatitue)+","+String.valueOf(clientLongitude)+"&navigate=yes";
-            Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
-            startActivity( intent );
-        }
-        catch ( ActivityNotFoundException ex  )
-        {
+            String url = "https://waze.com/ul?ll=" + String.valueOf(clientLatitue) + "," + String.valueOf(clientLongitude) + "&navigate=yes";
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+        } catch (ActivityNotFoundException ex) {
             // If Waze is not installed, open it in Google Play:
-            Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://play.google.com/store/apps/details?id=com.waze"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.waze"));
             startActivity(intent);
 
         }

@@ -139,8 +139,10 @@ public class LogSyncViewModel extends AndroidViewModel {
         UtilisateurUniqueManager.synchronisationUtilisateurUnique(getApplication());
         CommandeNonClotureeManager.synchronisationCommandeNonCloturee(getApplication());
         CommandeNonClotureeLigneManager.synchronisationCommandeNonClotureeLigne(getApplication());
-        LivraisonManager.synchronisationLivraisonPull(getApplication());
-        LivraisonLigneManager.synchronisationLivraisonLignePull(getApplication());
+
+        //LivraisonManager.synchronisationLivraisonPull(getApplication());
+        //LivraisonLigneManager.synchronisationLivraisonLignePull(getApplication());
+
         //EncaissementManager.synchronisationEncaissementPull(getApplication());
 
         ListePrixManager.synchronisationListePrix(getApplication());

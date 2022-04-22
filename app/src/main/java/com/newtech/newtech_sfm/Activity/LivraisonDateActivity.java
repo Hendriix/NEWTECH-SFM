@@ -514,7 +514,7 @@ public class LivraisonDateActivity extends AppCompatActivity implements SearchVi
         LinearLayout trajet_ll;
         LinearLayout visiter_ll;
 
-        tvclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        tvclose =(TextView) myDialog.findViewById(R.id.close_tv);
         tvClientNom =(TextView) myDialog.findViewById(R.id.client_nom_tv);
         tvClientAdresse =(TextView) myDialog.findViewById(R.id.client_adresse_tv);
 

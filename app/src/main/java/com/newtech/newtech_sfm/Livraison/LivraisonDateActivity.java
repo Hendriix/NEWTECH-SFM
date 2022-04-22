@@ -167,7 +167,7 @@ public class LivraisonDateActivity extends AppCompatActivity implements SearchVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.livraison_date_activity);
         myDialog = new Dialog(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_default);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.livraison_tb);
         //definir notre toolbar en tant qu'actionBar
         setSupportActionBar(toolbar);
         //afficher le bouton retour
@@ -183,12 +183,12 @@ public class LivraisonDateActivity extends AppCompatActivity implements SearchVi
         mProgressBar = (ProgressBar) findViewById(R.id.va_progressBar1);
         vaCheckBox1=(CheckBox) findViewById(R.id.va_checkBox1);
         vaCheckBox2=(CheckBox) findViewById(R.id.va_checkBox2);
-        mListView1=(ListView) findViewById(R.id.visite_listview1);
+        mListView1=(ListView) findViewById(R.id.livraison_lv);
         date_btn = (Button)findViewById(R.id.date_btn);
         date_et = (EditText) findViewById(R.id.date_et);
         vaTextView1=(TextView) findViewById(R.id.va_textView1);
         vaTextView2=(TextView) findViewById(R.id.va_textView2);
-        mProgressBar=(ProgressBar) findViewById(R.id.va_progressBar1);
+        mProgressBar=(ProgressBar) findViewById(R.id.livraison_pd);
 
         initProgressDialog();
         
@@ -489,7 +489,7 @@ public class LivraisonDateActivity extends AppCompatActivity implements SearchVi
         LinearLayout trajet_ll;
         LinearLayout visiter_ll;
 
-        tvclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        tvclose =(TextView) myDialog.findViewById(R.id.close_tv);
         tvClientNom =(TextView) myDialog.findViewById(R.id.client_nom_tv);
         tvClientAdresse =(TextView) myDialog.findViewById(R.id.client_adresse_tv);
 
@@ -579,6 +579,7 @@ public class LivraisonDateActivity extends AppCompatActivity implements SearchVi
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
                 // If request is cancelled, the result arrays are empty.

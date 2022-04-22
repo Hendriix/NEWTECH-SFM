@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:elevation="20dp"
+    android:background="@drawable/questionnaire_item_round_corner">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_weight="1.6"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/client_nom_tv"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Client"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_bold"/>
+
+        <TextView
+            android:id="@+id/vendeur_nom_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pré-vendeur"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_bold"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/numero_commande_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Numéro de commande"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_bold"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/date_commande_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date de commande"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_regular"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/montant_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Montant net"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_regular"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/reste_montant_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reste du montant"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_regular"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/tonnage_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tonnage"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_regular"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/reste_tonnage_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reste du tonnage"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alegreya_regular"
+            android:padding="5dp"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_weight="0.4"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/code_questionnaire_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:src="@drawable/order_ic"
+            android:padding="10dp"
+            android:contentDescription="questionnaire_iv"/>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

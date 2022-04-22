@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -100,7 +99,6 @@ public class MenuActivity extends AppCompatActivity {
     ArrayList<User> users = new ArrayList<>();
     User user;
     public int WRITE_EXTERNAL_STORAGE_CODE = 5;
-    private ArrayList<CardView> cardViewArrayList;
     Dialog myDialog;
     Dialog updateDialog;
 
@@ -319,7 +317,7 @@ public class MenuActivity extends AppCompatActivity {
         validerRecensementCv = findViewById(R.id.validerRecensementCv);
 
 
-        if (utilisateur_code != "" && utilisateur_code != null) {
+        if (!utilisateur_code.equals("") && utilisateur_code != null) {
 
             user = userManager.get(utilisateur_code);
 
@@ -391,155 +389,133 @@ public class MenuActivity extends AppCompatActivity {
 
         if (tacheCv != null) {
 
-            tacheCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent intent = new Intent(MenuActivity.this, CatalogueTacheActivity.class);
-                    listDataSave.remove("client_list");
-                    listDataSave.remove("tournee_code");
-                    listDataSave.remove("type_code");
-                    listDataSave.remove("classe_code");
-                    listDataSave.remove("categorie_code");
-                    startActivity(intent);
-                    finish();
-                }
+            tacheCv.setOnClickListener(view -> {
+                Intent intent = new Intent(MenuActivity.this, CatalogueTacheActivity.class);
+                listDataSave.remove("client_list");
+                listDataSave.remove("tournee_code");
+                listDataSave.remove("type_code");
+                listDataSave.remove("classe_code");
+                listDataSave.remove("categorie_code");
+                startActivity(intent);
+                finish();
             });
         }
 
         if (tourneeCv != null) {
-            tourneeCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent intent = new Intent(MenuActivity.this, TourneeActivity.class);
-                    listDataSave.remove("client_list");
-                    listDataSave.remove("tournee_code");
-                    listDataSave.remove("type_code");
-                    listDataSave.remove("classe_code");
-                    listDataSave.remove("categorie_code");
-                    startActivity(intent);
-                    finish();
-                }
+            tourneeCv.setOnClickListener(view -> {
+                Intent intent = new Intent(MenuActivity.this, TourneeActivity.class);
+                listDataSave.remove("client_list");
+                listDataSave.remove("tournee_code");
+                listDataSave.remove("type_code");
+                listDataSave.remove("classe_code");
+                listDataSave.remove("categorie_code");
+                startActivity(intent);
+                finish();
             });
         }
 
         if (clientsCv != null) {
-            clientsCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent intent = new Intent(MenuActivity.this, VisiteActivity.class);
-                    VisiteActivity.commande_source = "VISITE";
-                    VisiteActivity.activity_source = "MenuActivity";
-                    VisiteActivity.affectation_valeur = "tous";
-                    listDataSave.remove("client_list");
-                    listDataSave.remove("tournee_code");
-                    listDataSave.remove("type_code");
-                    listDataSave.remove("classe_code");
-                    listDataSave.remove("categorie_code");
-                    //intent.putExtra("TOURNEE_CODE",tournee.getTOURNEE_CODE());
-                    startActivity(intent);
-                    finish();
-                }
+            clientsCv.setOnClickListener(view -> {
+                Intent intent = new Intent(MenuActivity.this, VisiteActivity.class);
+                VisiteActivity.commande_source = "VISITE";
+                VisiteActivity.activity_source = "MenuActivity";
+                VisiteActivity.affectation_valeur = "tous";
+                listDataSave.remove("client_list");
+                listDataSave.remove("tournee_code");
+                listDataSave.remove("type_code");
+                listDataSave.remove("classe_code");
+                listDataSave.remove("categorie_code");
+                //intent.putExtra("TOURNEE_CODE",tournee.getTOURNEE_CODE());
+                startActivity(intent);
+                finish();
             });
         }
 
         if (synchroniserCv != null) {
-            synchroniserCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent intent = new Intent(MenuActivity.this, SyncV2Activity.class);
-                    startActivity(intent);
-                    finish();
-                }
+            synchroniserCv.setOnClickListener(view -> {
+                Intent intent = new Intent(MenuActivity.this, SyncV2Activity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
         if (catalogueCv != null) {
-            catalogueCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    RVAdapter.currentActivity = "CatalogueActivity";
-                    Intent intent = new Intent(MenuActivity.this, CatalogueActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+            catalogueCv.setOnClickListener(view -> {
+                RVAdapter.currentActivity = "CatalogueActivity";
+                Intent intent = new Intent(MenuActivity.this, CatalogueActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
 
         if (rapportCv != null) {
-            rapportCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    RVAdapter.currentActivity = "RapportActivity";
-                    //Intent intent = new Intent(MenuActivity.this, RapportActivity.class);
-                    Intent intent = new Intent(MenuActivity.this, RapportMenuActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+            rapportCv.setOnClickListener(view -> {
+                RVAdapter.currentActivity = "RapportActivity";
+                //Intent intent = new Intent(MenuActivity.this, RapportActivity.class);
+                Intent intent = new Intent(MenuActivity.this, RapportMenuActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
         if (dbClientCv != null) {
-            dbClientCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    //CatalogueClientActivity.tournee_code = "tous";
-                    Intent intent = new Intent(MenuActivity.this, CatalogueClientNActivity.class);
-                    // Intent intent = new Intent(MenuActivity.this, AnnulerCommandeActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+            dbClientCv.setOnClickListener(view -> {
+                //CatalogueClientActivity.tournee_code = "tous";
+                Intent intent = new Intent(MenuActivity.this, CatalogueClientNActivity.class);
+                // Intent intent = new Intent(MenuActivity.this, AnnulerCommandeActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
         if (quitterCv != null) {
-            quitterCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
+            quitterCv.setOnClickListener(view -> {
 
-                    Logs logs = new Logs(getApplicationContext(), "TP0074");
-                    logsManager.add(logs);
-                    LogsManager.synchronisationLogs(getApplicationContext());
+                Logs logs1 = new Logs(getApplicationContext(), "TP0074");
+                logsManager.add(logs1);
+                LogsManager.synchronisationLogs(getApplicationContext());
 
-                    stopService(new Intent(MenuActivity.this, BlutoothConnctionService.class));
-                    stopService(new Intent(MenuActivity.this, BlutDiscovery.class));
-                    Intent intent = new Intent(MenuActivity.this, AlarmReceiver.class);
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(MenuActivity.this, 0,
-                            intent, PendingIntent.FLAG_CANCEL_CURRENT);
-                    stopService(new Intent(MenuActivity.this, Gpstrackerservice.class));
-                    //finish();
-                    //System.exit(0);
-                    Intent intent_login = new Intent(MenuActivity.this, AuthActivity.class);
-                    startActivity(intent_login);
-                    finish();
-                }
+                stopService(new Intent(MenuActivity.this, BlutoothConnctionService.class));
+                stopService(new Intent(MenuActivity.this, BlutDiscovery.class));
+                Intent intent = new Intent(MenuActivity.this, AlarmReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(MenuActivity.this, 0,
+                        intent, PendingIntent.FLAG_CANCEL_CURRENT);
+                stopService(new Intent(MenuActivity.this, Gpstrackerservice.class));
+                //finish();
+                //System.exit(0);
+                Intent intent_login = new Intent(MenuActivity.this, AuthActivity.class);
+                startActivity(intent_login);
+                finish();
             });
         }
 
         if (stockCv != null) {
-            stockCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    StockDemandeManager.synchronisationStockDemandeReceptionnee(getApplicationContext());
-                    StockDemandeLigneManager.synchronisationStockDemandeLigneReceptionnee(getApplicationContext());
+            stockCv.setOnClickListener(view -> {
+                StockDemandeManager.synchronisationStockDemandeReceptionnee(getApplicationContext());
+                StockDemandeLigneManager.synchronisationStockDemandeLigneReceptionnee(getApplicationContext());
 
-                    Intent intent = new Intent(MenuActivity.this, StockActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+                Intent intent = new Intent(MenuActivity.this, StockActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
         if (encaissementCv != null) {
-            encaissementCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
+            encaissementCv.setOnClickListener(view -> {
 
-                    Intent intent = new Intent(MenuActivity.this, CreditActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+                Intent intent = new Intent(MenuActivity.this, CreditActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
         if (validerRecensementCv != null) {
-            validerRecensementCv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
+            validerRecensementCv.setOnClickListener(view -> {
 
-                    Intent intent = new Intent(MenuActivity.this, RecensementActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+                Intent intent = new Intent(MenuActivity.this, RecensementActivity.class);
+                startActivity(intent);
+                finish();
             });
         }
 
@@ -553,30 +529,22 @@ public class MenuActivity extends AppCompatActivity {
             new AlertDialog.Builder(this)
                     .setTitle("PERMISSION NEEDED")
                     .setMessage("TO SAVE PICTURES OF CLIENTS")
-                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(MenuActivity.this,
-                                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_STORAGE_CODE);
+                    .setPositiveButton("ok", (dialog, which) -> ActivityCompat.requestPermissions(MenuActivity.this,
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_STORAGE_CODE))
+                    .setNegativeButton("cancel", (dialog, which) -> {
+                        stopService(new Intent(MenuActivity.this, BlutoothConnctionService.class));
+                        stopService(new Intent(MenuActivity.this, BlutDiscovery.class));
+                        Intent intent = new Intent(MenuActivity.this, AlarmReceiver.class);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(MenuActivity.this, 0,
+                                intent, PendingIntent.FLAG_CANCEL_CURRENT);
+                        try {
+                            pendingIntent.send();
+                        } catch (PendingIntent.CanceledException e) {
+                            e.printStackTrace();
                         }
-                    })
-                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            stopService(new Intent(MenuActivity.this, BlutoothConnctionService.class));
-                            stopService(new Intent(MenuActivity.this, BlutDiscovery.class));
-                            Intent intent = new Intent(MenuActivity.this, AlarmReceiver.class);
-                            PendingIntent pendingIntent = PendingIntent.getBroadcast(MenuActivity.this, 0,
-                                    intent, PendingIntent.FLAG_CANCEL_CURRENT);
-                            try {
-                                pendingIntent.send();
-                            } catch (PendingIntent.CanceledException e) {
-                                e.printStackTrace();
-                            }
-                            finish();
-                            System.exit(0);
-                            dialog.dismiss();
-                        }
+                        finish();
+                        System.exit(0);
+                        dialog.dismiss();
                     })
                     .create().show();
 

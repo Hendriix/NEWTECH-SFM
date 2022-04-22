@@ -19,12 +19,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.newtech.newtech_sfm.Activity.ClientActivity;
-import com.newtech.newtech_sfm.Activity.ViewLivraisonActivity;
 import com.newtech.newtech_sfm.Metier.Livraison;
 import com.newtech.newtech_sfm.Metier.LivraisonLigne;
 import com.newtech.newtech_sfm.Metier_Manager.ImpressionManager;
 import com.newtech.newtech_sfm.Metier_Manager.LivraisonLigneManager;
 import com.newtech.newtech_sfm.R;
+import com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier.ViewLivraisonActivity;
 
 import java.util.ArrayList;
 

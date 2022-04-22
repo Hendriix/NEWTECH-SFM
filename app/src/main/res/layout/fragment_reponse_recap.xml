@@ -4,22 +4,66 @@
     tools:context="com.newtech.newtech_sfm.superviseur.recap.ReponseRecapFragment"
     tools:layout="@layout/fragment_questionnaire">
 
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#e6e6e6">
 
-
-        <LinearLayout
-            android:id="@+id/recap_ll"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            android:padding="10dp" />
+            android:background="#e6e6e6"
+            android:layout_above="@+id/control_btn_ll">
 
 
-    </ScrollView>
+            <LinearLayout
+                android:id="@+id/recap_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:padding="10dp" />
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/control_btn_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/valider_vr_btn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/valider"
+                android:textColor="@color/White"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/annuler_vr_btn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/annuler"
+                android:textColor="@color/White"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
 
 </layout>

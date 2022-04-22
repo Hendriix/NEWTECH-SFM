@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier.MobViewLivraisonFragment"
+    tools:layout="@layout/fragment_view_livraison">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="311dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/lines_tl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:id="@+id/tableRow0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="6"
+                        android:gravity="center"
+                        android:text="COMMANDE LIGNES"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:background="@color/secondary"
+                        android:textColor="@color/blanc"
+                        android:typeface="serif"></TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:theme="@style/ToolBarStyle">
+
+                    <TextView
+                        android:id="@+id/ligne_code1"
+                        android:text="N°"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                    <TextView
+                        android:id="@+id/art_code1"
+                        android:text="ARTICLE"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                    <TextView
+                        android:id="@+id/unite1"
+                        android:text="UNITE"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                    <TextView
+                        android:id="@+id/qte1"
+                        android:text="QTE"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                    <TextView
+                        android:id="@+id/remise1"
+                        android:text="REM"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                    <TextView
+                        android:id="@+id/total1"
+                        android:text="TOTAL"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="173dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/gratuite_tl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:id="@+id/gratuiteRow0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/gratuite_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:gravity="center"
+                        android:text="GRATUITES"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:background="@color/secondary"
+                        android:textColor="@color/blanc"
+                        android:typeface="serif"></TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/gratuiteRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:theme="@style/ToolBarStyle">
+
+                    <TextView
+                        android:id="@+id/gratuite_article_tv"
+                        android:text="ARTICLE"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                    <TextView
+                        android:id="@+id/gratuite_quantite_tv"
+                        android:text="QUANTITE"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:background="@drawable/tablelayout_cell_shape"
+                        android:gravity="center"></TextView>
+
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/questionnaire_item_round_corner">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_shape">
+
+                <TextView
+                    android:id="@+id/panier_total_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="1dp"
+                    android:text="Total :"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/total_panier_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="1dp"
+                    android:text="0"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/secondary"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_shape">
+
+                <TextView
+                    android:id="@+id/panier_remise_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="1dp"
+                    android:text=" Remise :"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/panier_remise_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="1dp"
+                    android:text="0"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/secondary"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_shape">
+
+                <TextView
+                    android:id="@+id/panier_net_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="1dp"
+                    android:text=" Net :"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/panier_net_value_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="1dp"
+                    android:text="0"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/secondary"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <Button
+                    android:id="@+id/validate_btn"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:text="@string/encaisser"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+
+                    />
+
+                <Button
+                    android:id="@+id/edit_btn"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:text="@string/modifier"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+
+                    />
+
+                <Button
+                    android:id="@+id/cancel_btn"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:text="@string/annuler"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@color/blanc"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/valider_panier_pi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</layout>

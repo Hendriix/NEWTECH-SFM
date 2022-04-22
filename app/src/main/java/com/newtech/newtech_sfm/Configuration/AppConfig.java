@@ -9,7 +9,8 @@ public class AppConfig {
     //l'adresse des dans le serveur http://webapp.savola.com/OctopusMobile/WS/
     //private static String URL_SERVER= "https://webapp.savola.com/octopusnew/MB/WS/";
 
-    private static String URL_SERVER = "https://77.95.216.47/octopusnew/MB/WS/";
+    //private static String URL_SERVER = "https://77.95.216.47/octopusnew/MB/WS/";
+    private static String URL_SERVER = "https://webapp.savola.com/octopusnew/MB/WS/";
 
     public static String URL_LOGIN_TEST = URL_SERVER + "login-exec_test.php";
     public static String URL_SYNC_UTILISATEURUNIQUE = URL_SERVER + "Sync_UtilisateurUnique.php";
@@ -130,6 +131,7 @@ public class AppConfig {
     public static String URL_SYNC_UTILISATEUR_BY_DCCC = URL_SERVER + "Get_Utilisateur_ByDCC.php";
     public static String URL_SYNC_TOURNEE_BY_UC = URL_SERVER + "Get_Tournee_ByUC.php";
     public static String URL_SYNC_CLIENT_RECENSEMENT = URL_SERVER + "Get_Client.php";
+    public static String URL_SYNC_CLIENT_NON_CLOTURES= URL_SERVER + "GetClientNcAl.php";
     public static String URL_SYNC_CLIENT_BY_QR = URL_SERVER + "Get_Client_ByQr.php";
 
     public static String URL_REGISTER_DEVICE = URL_SERVER + "RegisterDevice.php";
@@ -139,9 +141,14 @@ public class AppConfig {
     public static String URL_GET_RAPPORT_CHOUFOUNI = URL_SERVER + "Rapport_Choufouni.php";
     public static String URL_SYNC_QUESTIONNAIRE = URL_SERVER + "getListQuestionnaire.php";
     public static String URL_SYNC_QUESTIONNAIRE_REPONSE = URL_SERVER + "getQuestionnaire.php";
+    public static String URL_SYNC_RESULTAT = URL_SERVER + "Sync_Resultat.php";
+
+    public static String URL_SYNC_MOB_CMD_AL = URL_SERVER + "getCmdNcAL.php";
+    public static String URL_SYNC_MOB_CMDL_AL = URL_SERVER + "getCmdNcLAL.php";
+
+    public static String URL_LIVRAISON = URL_SERVER + "Livraison.php";
 
     public static final String DATABASE_NAME = "db_sfm";
     public static final int DATABASE_VERSION = 20;
-
 
 }

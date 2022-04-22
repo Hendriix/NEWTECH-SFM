@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.newtech.newtech_sfm.Metier.Client;
+import com.newtech.newtech_sfm.Metier.CommandeLigne;
+import com.newtech.newtech_sfm.Metier.LivraisonLigne;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +22,6 @@ public class ListDataSave {
         editor = preferences.edit();
     }
 
-    /**
-     * Save List
-     * @param tag
-     * @param datalist
-     */
     public void setDataList(String tag, List<Client> datalist) {
         if (null == datalist || datalist.size() <= 0)
             return;
@@ -38,13 +35,8 @@ public class ListDataSave {
 
     }
 
-    /**
-     * Get List
-     * @param tag
-     * @return
-     */
     public List<Client> getDataList(String tag) {
-        List<Client> datalist=new ArrayList<Client>();
+        List<Client> datalist = new ArrayList<Client>();
         String strJson = preferences.getString(tag, null);
         if (null == strJson) {
             return datalist;
@@ -56,27 +48,27 @@ public class ListDataSave {
 
     }
 
-    public void setDataBoolean(String key, Boolean value){
-        editor.putBoolean(key,value);
+    public void setDataBoolean(String key, Boolean value) {
+        editor.putBoolean(key, value);
         editor.commit();
     }
 
-    public Boolean getDataBoolean(String key){
+    public Boolean getDataBoolean(String key) {
 
         Boolean valeur;
-        valeur = preferences.getBoolean(key,false);
+        valeur = preferences.getBoolean(key, false);
         return valeur;
     }
 
-    public void setDataString(String key, String value){
-        editor.putString(key,value);
+    public void setDataString(String key, String value) {
+        editor.putString(key, value);
         editor.commit();
     }
 
-    public String getDataString(String key){
+    public String getDataString(String key) {
 
         String valeur;
-        valeur = preferences.getString(key,"");
+        valeur = preferences.getString(key, "");
         return valeur;
     }
 
@@ -84,4 +76,64 @@ public class ListDataSave {
         editor.remove(tag);
         editor.apply();
     }
+
+    /*COMMANDE LIGNE*/
+
+    public void setCommandeLigneList(String tag, ArrayList<LivraisonLigne> datalist) {
+        if (null == datalist || datalist.size() <= 0)
+            return;
+
+        Gson gson = new Gson();
+        // convert json data, then save
+        String strJson = gson.toJson(datalist);
+        //editor.clear();
+        editor.putString(tag, strJson);
+        editor.commit();
+
+    }
+
+    public ArrayList<CommandeLigne> getCommandeLigneList(String tag) {
+
+        ArrayList<CommandeLigne> datalist = new ArrayList<>();
+        String strJson = preferences.getString(tag, null);
+        if (null == strJson) {
+            return datalist;
+        }
+        Gson gson = new Gson();
+        datalist = gson.fromJson(strJson, new TypeToken<ArrayList<CommandeLigne>>() {
+        }.getType());
+        return datalist;
+
+    }
+
+    /*LIVRAISON LIGNE*/
+
+    public void setLivraisonLigneList(String tag, ArrayList<LivraisonLigne> datalist) {
+        if (null == datalist || datalist.size() <= 0)
+            return;
+
+        Gson gson = new Gson();
+        // convert json data, then save
+        String strJson = gson.toJson(datalist);
+        //editor.clear();
+        editor.putString(tag, strJson);
+        editor.commit();
+
+    }
+
+    public ArrayList<LivraisonLigne> getLivraisonLigneList(String tag) {
+
+        ArrayList<LivraisonLigne> datalist = new ArrayList<>();
+        String strJson = preferences.getString(tag, null);
+        if (null == strJson) {
+            return datalist;
+        }
+        Gson gson = new Gson();
+        datalist = gson.fromJson(strJson, new TypeToken<ArrayList<LivraisonLigne>>() {
+        }.getType());
+        return datalist;
+
+    }
+
+
 }

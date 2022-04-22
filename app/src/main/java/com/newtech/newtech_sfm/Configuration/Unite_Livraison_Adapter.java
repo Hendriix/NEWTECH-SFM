@@ -81,27 +81,23 @@ public class Unite_Livraison_Adapter extends BaseAdapter{
         String base64Image1 = "";
         unite = uniteManager.getByACUC(article_code,article_unite);
 
-        quantite_unite.setText(String.valueOf(livraisonLignes.get(position).getQTE_COMMANDEE()));
+        quantite_unite.setText(String.valueOf((int)livraisonLignes.get(position).getQTE_COMMANDEE()));
 
+        if (unite.getIMAGE().toString().contains(",")) {
 
+            base64Image1 = String.valueOf(unite.getIMAGE()).split(",")[1];
 
-            if (unite.getIMAGE().toString().contains(",")) {
+        } else {
 
-                base64Image1 = String.valueOf(unite.getIMAGE()).split(",")[1];
-
-            } else {
-
-                base64Image1 = unite.getIMAGE();
-            }
+            base64Image1 = unite.getIMAGE();
+        }
 
         if(base64Image1.length()<10 || base64Image1.equals("") || base64Image1==null){
 
             if(getImageId(convertView.getContext(), unite.getARTICLE_CODE().toLowerCase())>0){
-                //caisse_image.setImageResource(getImageId(convertView.getContext(),"box_icone"));
                 image_unite.setImageResource(getImageId(convertView.getContext(), unite.getARTICLE_CODE().toLowerCase()));
 
             }else{
-                //caisse_image.setImageResource(getImageId(convertView.getContext(),"box_icone"));
                 image_unite.setImageResource(getImageId(convertView.getContext(),"bouteille_inconnu2"));
 
             }
@@ -111,9 +107,6 @@ public class Unite_Livraison_Adapter extends BaseAdapter{
             Log.d(TAG, "image: "+unite.getIMAGE());
             byte[] decodedString= Base64.decode(base64Image1,Base64.DEFAULT);
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString,0,decodedString.length);
-            Log.d(TAG, "getView: decodedBytmap"+decodedByte);
-            Log.d(TAG, "getView: decodeBytmap"+unite.getIMAGE());
-            Log.d(TAG, "getView: decodeBytmap to"+unite.getIMAGE().toString());
             image_unite.setImageBitmap(Bitmap.createScaledBitmap(decodedByte,decodedByte.getWidth() , decodedByte.getHeight(), false));
         }
 

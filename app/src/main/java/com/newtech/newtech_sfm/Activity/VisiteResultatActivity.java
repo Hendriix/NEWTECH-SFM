@@ -18,13 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.newtech.newtech_sfm.Configuration.VisiteResultat_Adapter;
-import com.newtech.newtech_sfm.Livraison.LivraisonDateActivity;
 import com.newtech.newtech_sfm.Metier.Visite;
 import com.newtech.newtech_sfm.Metier.VisiteResultat;
 import com.newtech.newtech_sfm.Metier_Manager.ClientManager;
 import com.newtech.newtech_sfm.Metier_Manager.VisiteManager;
 import com.newtech.newtech_sfm.Metier_Manager.VisiteResultatManager;
 import com.newtech.newtech_sfm.R;
+import com.newtech.newtech_sfm.livraisoncnc.LivraisonDateActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

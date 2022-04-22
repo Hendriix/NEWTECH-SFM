@@ -1,4 +1,4 @@
-package com.newtech.newtech_sfm.Activity;
+package com.newtech.newtech_sfm.mob_cmd_al.mob_livraison_panier;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -22,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.newtech.newtech_sfm.Activity.ClientActivity;
 import com.newtech.newtech_sfm.Configuration.LivraisonPanier_Adapter;
 import com.newtech.newtech_sfm.Configuration.Spinner_Adapter;
 import com.newtech.newtech_sfm.Metier.Article;
@@ -60,8 +61,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by TONPC on 14/04/2017.
- */
+* Created by TONPC on 14/04/2017.
+*/
 
 public class NewLivraisonPanierActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
@@ -208,11 +209,6 @@ public class NewLivraisonPanierActivity extends AppCompatActivity implements Sea
                         ArrayList<Unite> unites = new ArrayList<>();
                         unites = uniteManager.getListByArticleCode(article.getARTICLE_CODE());
 
-                        /*ArrayList<String> items= new ArrayList<>() ;
-                        items.add("CAISSE");
-                        items.add("BOUTEILLE");*/
-
-
                         final Dialog dialog = new Dialog(view.getContext());
                         dialog.setContentView(R.layout.alert_dialog_panier);
 
@@ -255,105 +251,87 @@ public class NewLivraisonPanierActivity extends AppCompatActivity implements Sea
 
                         });
 
-
                         Button annuler_panier = (Button) dialog.findViewById(R.id.annuler_panier);
                         Button valider_panier = (Button) dialog.findViewById(R.id.valider_panier);
 
 
                         dialog.setTitle(article.getARTICLE_DESIGNATION1());
 
-                        annuler_panier.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+                        annuler_panier.setOnClickListener(v -> dialog.dismiss());
+
+                        valider_panier.setOnClickListener(v -> {
+
+                            float quantite_article = 0;
+                            double prixDefault = 0;
+
+                            String unite_code = "";
+
+                            //unite_code = unite.getUNITE_CODE();
+                            Log.d("unite", "onClick: " + unite_code);
+
+                            if (unite == null) {
+
+                                Toast.makeText(getApplicationContext(), "Merci de Choisir une unité", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+
+                                Log.d("unite1", "onClick: " + unite_code);
+
+                            } else {
+
+                                unite_code = unite.getUNITE_CODE();
+                                Log.d("unite2", "onClick: " + unite_code);
+
+                            }
+
+                            Log.d("valider", "valeur: " + quantite_vendue.getText());
+
+                            if (!String.valueOf(quantite_vendue.getText()).equals("")) {
+                                quantite_article = Integer.parseInt(String.valueOf(quantite_vendue.getText()));
+                            }
+
+
+                            DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ");
+                            String dateLivraison = df1.format(Calendar.getInstance().getTime());
+
+                            ListePrixLigne listePrixLigne = listePrixLigneManager.getListPrixLigneByLPCACUC(clientCourant.getLISTEPRIX_CODE(), article.getARTICLE_CODE(), unite_code);
+
+
+                            if (listePrixLigne != null) {
+                                prixDefault = listePrixLigne.getARTICLE_PRIX();
+                            }
+
+                            LivraisonLigne livraisonLigne1 = getLivraisonLigne(article, unite_code, livraisonLignes);
+
+                            if (commandeSource.equals("Livraison") && quantite_article > livraisonLigne1.getQTE_COMMANDEE()) {
 
                                 dialog.dismiss();
-                            }
-                        });
+                                panierAdapter.notifyDataSetChanged();
+                                Toast.makeText(getApplicationContext(), "Vous ne pouver pas dépasser le max du quantite à livrer", Toast.LENGTH_LONG).show();
 
+                            } else {
+                                supprimerLivraisonLigne(article, unite_code, livraisonLignes);
 
-                        valider_panier.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+                                if (quantite_article != 0 && !String.valueOf(quantite_vendue.getText()).equals("")) {
 
-                                float quantite_article = 0;
-                                double prixDefault = 0;
-
-                                String unite_code = "";
-
-                                //unite_code = unite.getUNITE_CODE();
-                                Log.d("unite", "onClick: " + unite_code);
-
-                                if (unite == null) {
-
-                                    Toast.makeText(getApplicationContext(), "Merci de Choisir une unité", Toast.LENGTH_LONG).show();
-                                    dialog.dismiss();
-
-                                    Log.d("unite1", "onClick: " + unite_code);
-
-                                } else {
-
-                                    unite_code = unite.getUNITE_CODE();
-                                    Log.d("unite2", "onClick: " + unite_code);
-
-                                }
-
-                                Log.d("valider", "valeur: " + quantite_vendue.getText());
-
-                                if (!String.valueOf(quantite_vendue.getText()).equals("")) {
-                                    quantite_article = Integer.parseInt(String.valueOf(quantite_vendue.getText()));
-                                }
-
-
-                                DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ");
-                                String dateLivraison = df.format(Calendar.getInstance().getTime());
-
-                                ListePrixLigne listePrixLigne = listePrixLigneManager.getListPrixLigneByLPCACUC(clientCourant.getLISTEPRIX_CODE(), article.getARTICLE_CODE(), unite_code);
-
-
-                                if (listePrixLigne != null) {
-                                    prixDefault = listePrixLigne.getARTICLE_PRIX();
-                                }
-
-
-                        /*ArticlePrixManager articlePrixManager = new ArticlePrixManager(getApplicationContext());
-                        Articleprix articlePrix = articlePrixManager.getArticlePrixBy_Unite_ArticlePrix(article.getARTICLE_CODE(), unite_code, clientCourant.getCIRCUIT_CODE(), dateLivraison);
-                        double prixArticle = articlePrix.getARTICLE_PRIX();*/
-
-
-                                LivraisonLigne livraisonLigne1 = getLivraisonLigne(article, unite_code, livraisonLignes);
-
-                                if (commandeSource.equals("Livraison") && quantite_article > livraisonLigne1.getQTE_COMMANDEE()) {
-
-                                    dialog.dismiss();
-                                    panierAdapter.notifyDataSetChanged();
-                                    Toast.makeText(getApplicationContext(), "Vous ne pouver pas dépasser le max du quantite à livrer", Toast.LENGTH_LONG).show();
-
-                                } else {
-                                    supprimerLivraisonLigne(article, unite_code, livraisonLignes);
-
-                                    if (quantite_article != 0 && !String.valueOf(quantite_vendue.getText()).equals("")) {
-
-                                        ajouterLivraisonLigne(livraison, article, quantite_article, unite_code, prixDefault, livraisonLignes);
-                                        updateLivraison(livraison, livraisonLignes);
-                                        //Log.d("newpanierautre", "onClick: "+commande.toString());
-
-
-                                    }
-
+                                    ajouterLivraisonLigne(livraison, article, quantite_article, unite_code, prixDefault, livraisonLignes);
                                     updateLivraison(livraison, livraisonLignes);
+                                    //Log.d("newpanierautre", "onClick: "+commande.toString());
 
-                                    Log.d("newpanier", "onClick: " + livraison.toString());
-
-                                    total_panier.setText(String.valueOf(livraison.getVALEUR_COMMANDE()) + "DH");
-                                    total_vente.setText(String.valueOf(livraison.getVALEUR_COMMANDE()) + "DH");
-
-                                    unite = null;
-
-                                    dialog.dismiss();
-
-                                    panierAdapter.notifyDataSetChanged();
 
                                 }
+
+                                updateLivraison(livraison, livraisonLignes);
+
+                                Log.d("newpanier", "onClick: " + livraison.toString());
+
+                                total_panier.setText(String.valueOf(livraison.getVALEUR_COMMANDE()) + "DH");
+                                total_vente.setText(String.valueOf(livraison.getVALEUR_COMMANDE()) + "DH");
+
+                                unite = null;
+
+                                dialog.dismiss();
+
+                                panierAdapter.notifyDataSetChanged();
 
                             }
 
@@ -363,59 +341,57 @@ public class NewLivraisonPanierActivity extends AppCompatActivity implements Sea
                     }
                 });
 
-                val.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
+                val.setOnClickListener(v -> {
 
-                        //val.setClickable(false);
-                        ArrayList<String> articles = new ArrayList<>();
-                        boolean stock_suffisant = true;
+                    //val.setClickable(false);
+                    ArrayList<String> articles = new ArrayList<>();
+                    boolean stock_suffisant = true;
 
-                        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-                        Gson gson2 = new Gson();
-                        String json2 = pref.getString("User", "");
-                        Type type = new TypeToken<JSONObject>() {
-                        }.getType();
-                        final JSONObject user = gson2.fromJson(json2, type);
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+                    Gson gson2 = new Gson();
+                    String json2 = pref.getString("User", "");
+                    Type type = new TypeToken<JSONObject>() {
+                    }.getType();
+                    final JSONObject user = gson2.fromJson(json2, type);
 
-                        for (int i = 0; i < livraisonLignes.size(); i++) {
+                    for (int i = 0; i < livraisonLignes.size(); i++) {
 
-                            if (!articles.contains(livraisonLignes.get(i).getARTICLE_CODE())) {
-                                articles.add(livraisonLignes.get(i).getARTICLE_CODE());
-                            }
+                        if (!articles.contains(livraisonLignes.get(i).getARTICLE_CODE())) {
+                            articles.add(livraisonLignes.get(i).getARTICLE_CODE());
                         }
-
-                        try {
-                            if (stockManager.checkGerable(user.getString("UTILISATEUR_CODE"), getApplicationContext())) {
-                                for (int i = 0; i < articles.size(); i++) {
-
-                                    if (stockLigneManager.checkLivraisonStockLigneQteVersion(livraisonLignes, articles.get(i), getApplicationContext()) == false) {
-                                        //Toast.makeText(getApplicationContext(),"Stock Insuffisant" , Toast.LENGTH_LONG).show();
-                                        stock_suffisant = false;
-                                        break;
-                                    }
-                                }
-                            } else {
-                                Log.d(TAG, "onClick: stock ingérable");
-                                showMessage("STOCK INGERABLE");
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                        if (stock_suffisant == false) {
-                            Log.d(TAG, "onClick: stock insuffisant");
-                            showMessage("STOCK INSUFFISANT");
-                        } else {
-                            Log.d(TAG, "onClick: stock suffisant");
-                            showMessage("STOCK SUFFISANT");
-                        }
-
-                        Intent i = new Intent(getApplicationContext(), ViewLivraisonActivity.class);
-                        startActivity(i);
-                        finish();
-
-
                     }
+
+                    try {
+                        if (stockManager.checkGerable(user.getString("UTILISATEUR_CODE"), getApplicationContext())) {
+                            for (int i = 0; i < articles.size(); i++) {
+
+                                if (stockLigneManager.checkLivraisonStockLigneQteVersion(livraisonLignes, articles.get(i), getApplicationContext()) == false) {
+                                    //Toast.makeText(getApplicationContext(),"Stock Insuffisant" , Toast.LENGTH_LONG).show();
+                                    stock_suffisant = false;
+                                    break;
+                                }
+                            }
+                        } else {
+                            Log.d(TAG, "onClick: stock ingérable");
+                            showMessage("STOCK INGERABLE");
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (stock_suffisant == false) {
+                        Log.d(TAG, "onClick: stock insuffisant");
+                        showMessage("STOCK INSUFFISANT");
+                    } else {
+                        Log.d(TAG, "onClick: stock suffisant");
+                        showMessage("STOCK SUFFISANT");
+                    }
+
+                    Intent i = new Intent(getApplicationContext(), ViewLivraisonActivity.class);
+                    startActivity(i);
+                    finish();
+
+
                 });
 
             }
@@ -565,7 +541,7 @@ public class NewLivraisonPanierActivity extends AppCompatActivity implements Sea
 
         int size = livraisonLignes.size() + 1;
 
-        LivraisonLigne livraisonLigne = new LivraisonLigne(livraison, article, dateLivraison, quantite, unite, prixArticle, size, getApplicationContext());
+        LivraisonLigne livraisonLigne = new LivraisonLigne(livraison, article, dateLivraison, (int)quantite, unite, prixArticle, size, getApplicationContext());
         livraisonLignes.add(livraisonLigne);
     }
 

@@ -411,7 +411,7 @@ public class Client_Manager extends AppCompatActivity implements GoogleApiClient
                 clientN.setADRESSE_QUARTIER("");
                 clientN.setTYPE_CODE("");
                 clientN.setCATEGORIE_CODE("");
-                clientN.setGROUPE_CODE("GP0001");
+                clientN.setGROUPE_CODE("GP0005");
                 clientN.setCLASSE_CODE("");
                 clientN.setCIRCUIT_CODE(CIRCUIT_CODE);
                 clientN.setFAMILLE_CODE("FA0005");
@@ -448,7 +448,7 @@ public class Client_Manager extends AppCompatActivity implements GoogleApiClient
             clientN.setADRESSE_QUARTIER("");
             clientN.setTYPE_CODE("");
             clientN.setCATEGORIE_CODE("");
-            clientN.setGROUPE_CODE("GP0001");
+            clientN.setGROUPE_CODE("GP0005");
             clientN.setCLASSE_CODE("");
             clientN.setCIRCUIT_CODE(CIRCUIT_CODE);
             clientN.setFAMILLE_CODE("FA0005");

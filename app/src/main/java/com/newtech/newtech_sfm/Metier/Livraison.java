@@ -171,7 +171,7 @@ public class Livraison {
 
             //this.VISITE_CODE=commande.getVISITE_CODE();
 
-            this.STOCKDEPART_CODE=commande.getSTOCKDEPART_CODE();
+            this.STOCKDEPART_CODE=user.getSTOCK_CODE();
             this.STOCKDESTINATION_CODE=commande.getSTOCKDESTINATION_CODE();
             this.DESTINATION_CODE=commande.getDESTINATION_CODE();
 

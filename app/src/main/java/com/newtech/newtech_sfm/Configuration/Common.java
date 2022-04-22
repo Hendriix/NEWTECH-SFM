@@ -20,8 +20,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.newtech.newtech_sfm.Activity.SyncV2Activity;
+import com.newtech.newtech_sfm.Metier.Article;
 import com.newtech.newtech_sfm.Metier.Logs;
 import com.newtech.newtech_sfm.Metier.Parametre;
 import com.newtech.newtech_sfm.Metier_Manager.LogsManager;
@@ -254,5 +256,54 @@ public class Common {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
+    public static String dateYesterday() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        return dateFormat.format(cal.getTime());
+    }
+
+    public static String getDate(){
+
+        DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date_visite = df1.format(Calendar.getInstance().getTime());
+        return date_visite;
+    }
+    
+    public static void showImageView(Article article, ImageView imageView, Context context){
+        
+        String base64Image = "";
+
+        if(article.getIMAGE().toString().contains(",")){
+
+            base64Image = String.valueOf(article.getIMAGE()).split(",")[1];
+
+        }else{
+
+            base64Image=article.getIMAGE();
+        }
+
+
+        if(base64Image.length()<10 || base64Image.equals("") || base64Image==null){
+
+            if(getImageId(context, article.getARTICLE_CODE().toLowerCase())>0){
+                imageView.setImageResource(getImageId(context, article.getARTICLE_CODE().toLowerCase()));
+
+            }else{
+                imageView.setImageResource(getImageId(context,"bouteille_inconnu2"));
+
+            }
+
+        }else{
+            byte[] decodedString= Base64.decode(base64Image,Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString,0,decodedString.length);
+
+            imageView.setImageBitmap(Bitmap.createScaledBitmap(decodedByte,decodedByte.getWidth() , decodedByte.getHeight(), false));
+        }
+    }
+
+    public static void showToast(String message, Context context){
+        Toast.makeText(context,message,Toast.LENGTH_SHORT).show();
+    }
 
 }

@@ -1,10 +1,12 @@
 package com.newtech.newtech_sfm.superviseur
 
 import android.app.Application
+import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,10 +23,14 @@ import org.json.JSONObject
 class QuestionnaireViewModel(application: Application) :
     AndroidViewModel(application) {
 
+
     private var clientCode: String = ""
     private var visiteCode: String = ""
     private var distributeurCode: String = ""
     private var utilisateurCode: String = ""
+    private var questionnaireCode: String = ""
+    private var isSuccess = false
+
 
     private val questionList: ArrayList<Question> = ArrayList()
     private val reponseList: ArrayList<Reponse> = ArrayList()
@@ -38,7 +44,9 @@ class QuestionnaireViewModel(application: Application) :
 
     private val questionnaireQRLiveData: MutableLiveData<QuestionnaireQR> by lazy {
         MutableLiveData<QuestionnaireQR>().also {
+
             loadQuestionnaireQR(application)
+
         }
     }
 
@@ -47,12 +55,6 @@ class QuestionnaireViewModel(application: Application) :
             loadResultats(application)
         }
     }
-
-    /*private val questionListLiveData: MutableLiveData<ArrayList<Question>> by lazy {
-        MutableLiveData<ArrayList<Question>>().also {
-            loadQuestion(application)
-        }
-    }*/
 
     private fun loadResultats(application: Application) {
         resultatLiveData.value = resultatList
@@ -83,11 +85,11 @@ class QuestionnaireViewModel(application: Application) :
 
     fun getReponseByReponseCode(reponseCode: String): Reponse {
 
-        var reponseFound : Reponse = Reponse()
-        for(i in 0..reponseList.size-1){
+        var reponseFound: Reponse = Reponse()
+        for (i in 0..reponseList.size - 1) {
 
             val reponse = reponseList[i]
-            if(reponse.REPONSE_CODE.equals(reponseCode)){
+            if (reponse.REPONSE_CODE.equals(reponseCode)) {
 
                 reponseFound = reponse
                 return reponseFound
@@ -176,10 +178,14 @@ class QuestionnaireViewModel(application: Application) :
                         if (questionnaireQrs.length() > 0) {
 
                             val questionnaireQR = QuestionnaireQR(questionnaireQrs)
+
                             questionnaireQRLiveData.value = questionnaireQR
 
                             setQuestionList(questionnaireQR)
                             setReponseList(questionnaireQR)
+
+
+
 
                             Log.d(
                                 "QVM QR",
@@ -192,11 +198,11 @@ class QuestionnaireViewModel(application: Application) :
 
                         }
 
-
                     } else {
                         val errorMsg = jObj.getString("error_msg")
 
                     }
+
                 } catch (e: JSONException) {
 
                     e.printStackTrace()
@@ -216,7 +222,7 @@ class QuestionnaireViewModel(application: Application) :
                 if (pref.getString("is_login", null) == "ok") {
                     val TabParams = HashMap<String, String?>()
                     //TabParams["QUESTIONNAIRE_CODE"] = pref.getString("QUESTIONNAIRE_CODE", null)
-                    TabParams["QUESTIONNAIRE_CODE"] = "QSTR00001"
+                    TabParams["QUESTIONNAIRE_CODE"] = getQuestionnaireCode()
                     val builder = GsonBuilder()
                     val gson = builder.create()
                     arrayFinale["Params"] = gson.toJson(TabParams)
@@ -241,7 +247,7 @@ class QuestionnaireViewModel(application: Application) :
         }
     }
 
-    fun getQuestionList() : ArrayList<Question>{
+    fun getQuestionList(): ArrayList<Question> {
         return questionList
     }
 
@@ -411,6 +417,14 @@ class QuestionnaireViewModel(application: Application) :
         return isFormValid
     }
 
+    fun setIsSuccess(success: Boolean) {
+        isSuccess = success
+    }
+
+    fun getIsSuccess(): Boolean {
+        return isSuccess
+    }
+
     fun setClientCode(client_code: String) {
 
         Log.d("QuestionnaireViewModel 1", "setClientCode: " + client_code)
@@ -445,26 +459,33 @@ class QuestionnaireViewModel(application: Application) :
         this.utilisateurCode = utilisateurCode
     }
 
+    fun getQuestionnaireCode(): String {
+        return questionnaireCode
+    }
+
+    fun setQuestionnaireCode(questionnaireCode: String) {
+        this.questionnaireCode = questionnaireCode
+    }
+
     fun getUtilisateurCode(): String {
         return utilisateurCode
     }
 
-    fun checkIfQuestionHadResultat(questionCode : String) : Boolean{
+    fun checkIfQuestionHadResultat(questionCode: String): Boolean {
 
         var hasResultat = false
 
-        for(i in 0..resultatList.size-1){
+        for (i in 0..resultatList.size - 1) {
 
             val resultat = resultatList[i]
 
-            if(resultat.QUESTION_CODE.equals(questionCode)){
+            if (resultat.QUESTION_CODE.equals(questionCode)) {
                 return true
             }
         }
 
         return hasResultat
     }
-
 
 
 }

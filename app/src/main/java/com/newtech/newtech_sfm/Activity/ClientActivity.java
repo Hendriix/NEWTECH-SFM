@@ -41,6 +41,7 @@ import com.newtech.newtech_sfm.Metier_Manager.VisiteManager;
 import com.newtech.newtech_sfm.R;
 import com.newtech.newtech_sfm.TableauBordClient.TableauBordClientActivity;
 import com.newtech.newtech_sfm.merchandising.MerchandisingActivity;
+import com.newtech.newtech_sfm.mob_cmd_al.CommandeNonClotureeActivity;
 import com.newtech.newtech_sfm.superviseur.QuestionnaireActivity;
 
 import org.json.JSONObject;
@@ -268,7 +269,7 @@ public class ClientActivity extends AppCompatActivity {
         }
 
 
-        if(btn_livraison!=null){
+        /*if(btn_livraison!=null){
             btn_livraison.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     //Toast.makeText(ClientActivity.this,"A ACTIVER",
@@ -279,6 +280,18 @@ public class ClientActivity extends AppCompatActivity {
                 Intent i = new Intent(ClientActivity.this, CommandeActivity.class);
                 startActivity(i);
                 finish();
+                }
+            });
+        }*/
+
+        if(btn_livraison!=null){
+            btn_livraison.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+
+                    Intent i = new Intent(ClientActivity.this, CommandeNonClotureeActivity.class);
+                    i.putExtra("CLIENT_CODE",clientCourant.getCLIENT_CODE());
+                    startActivity(i);
+                    finish();
                 }
             });
         }
